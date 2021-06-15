@@ -1,0 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+// Variables
+$color-primary: rgb(29, 161, 242);
+$color-background: #fff;
+$color-text-headings: #0f1419;
+$color-text-secondary: #5b7082;
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+ul {
+  list-style: none;
+}
+
+.color-primary {
+  color: $color-primary;
+  fill: $color-primary;
+}

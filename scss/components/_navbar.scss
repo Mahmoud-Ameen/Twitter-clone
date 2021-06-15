@@ -1,0 +1,57 @@
+@import './icon';
+
+aside#nav-sidebar {
+  flex: 0 0 20%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-right: 20px;
+  .navbar {
+    .nav__link {
+      display: flex;
+      margin-bottom: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      &__icon svg {
+        font-size: 30px;
+        width: 30px;
+      }
+      &__title {
+        margin-left: 15px;
+      }
+    }
+    .tweet-btn-icon {
+      display: none;
+      button {
+        padding: 10px 12px;
+        border-radius: 50%;
+        svg {
+          width: 30px;
+          height: 30px;
+          fill: #fff;
+        }
+      }
+    }
+  }
+  @media (max-width: 1300px) {
+    justify-content: flex-end;
+    .navbar {
+      .nav__link {
+        &__title {
+          display: none;
+        }
+        &__icon {
+          padding: 10px;
+          svg {
+            margin-right: 0;
+          }
+        }
+      }
+      .tweet-btn {
+        display: none;
+      }
+      .tweet-btn-icon {
+        display: block;
+      }
+    }
+  }
+}

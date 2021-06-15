@@ -1,0 +1,16 @@
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: color 0.2s, background-color 0.2s;
+
+  &:hover,
+  &.active {
+    color: $color-primary;
+    fill: $color-primary;
+    background-color: lighten($color-primary, 41%);
+  }
+}
