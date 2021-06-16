@@ -6,11 +6,11 @@
   font-size: 16px;
   font-weight: bold;
   &--primary {
-    background-color: $color-primary;
+    background-color: var(--color-primary);
     transition: background-color 0.1s;
     color: #fff;
     &:hover {
-      background-color: darken($color: $color-primary, $amount: 5%);
+      background-color: var(--color-primary-darker);
     }
   }
   &--block {

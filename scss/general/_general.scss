@@ -6,18 +6,27 @@
 
 // Variables
 $color-primary: rgb(29, 161, 242);
-$color-background: #fff;
-$color-text-headings: #0f1419;
-$color-text-secondary: #5b7082;
+:root {
+  --color-background: #fff;
+  --color-primary: rgb(29, 161, 242);
+  --color-primary-light: #77c7f7;
+  --color-primary-lightest: #e3f3fd;
 
+  --color-primary-darker: #0d95e8;
+  --color-text-headings: #0f1419;
+  --color-text-secondary: #5b7082;
+
+  --color-border: rgb(235, 238, 240);
+}
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font: 14px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
 }
 ul {
   list-style: none;
 }
 
 .color-primary {
-  color: $color-primary;
-  fill: $color-primary;
+  color: var(--color-primary);
+  fill: var(--color-primary);
 }

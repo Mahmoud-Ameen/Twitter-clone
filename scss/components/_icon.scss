@@ -6,11 +6,13 @@
   border-radius: 30px;
   cursor: pointer;
   transition: color 0.2s, background-color 0.2s;
-
+  svg {
+    width: 25px;
+  }
   &:hover,
   &.active {
-    color: $color-primary;
-    fill: $color-primary;
-    background-color: lighten($color-primary, 41%);
+    color: var(--color-primary);
+    fill: var(--color-primary);
+    background-color: var(--color-primary-lightest);
   }
 }

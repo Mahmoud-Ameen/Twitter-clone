@@ -1,5 +1,5 @@
-export default function navbar() {
-	return `
+export default function navbar () {
+  return `
 	<header id='navbar'>
   <nav >
     <ul>
@@ -68,7 +68,7 @@ export default function navbar() {
           <p class='nav__link__title'>Messages</p>
         </span>
       </li>
-      <li class='nav__link boomarks'>
+      <li class='nav__link bookmarks'>
         <span class='icon nav__link__icon'>
           <svg
             viewBox='0 0 24 24'
@@ -143,5 +143,5 @@ export default function navbar() {
   </nav>	
 	</header>
 
-		`;
+		`
 }
