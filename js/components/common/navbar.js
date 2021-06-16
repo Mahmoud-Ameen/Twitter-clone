@@ -1,9 +1,8 @@
-export default function navbar () {
-  return `
-	<aside id='nav-sidebar'>
-  <nav class='navbar'>
+export default function navbar() {
+	return `
+	<header id='navbar'>
+  <nav >
     <ul>
-    //#region 
       <li class='nav__link'>
         <span class='icon nav__link__icon icon--circle logo color-primary '>
           <svg
@@ -142,7 +141,7 @@ export default function navbar () {
       </li>
     </ul>
   </nav>	
-	</aside>
+	</header>
 
-		`
+		`;
 }
