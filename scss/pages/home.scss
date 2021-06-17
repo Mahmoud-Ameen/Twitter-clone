@@ -3,18 +3,34 @@
 @import '../components/navbar';
 @import '../components/buttons';
 @import '../components/new-tweet';
+@import '../components/tweet';
 
 #main-section {
   > .heading {
-    padding: 5px 15px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    padding: 5px 15px;
     border-bottom: 1px solid rgb(235, 238, 240);
-    h1 {
-      font-size: 20px;
-      font-weight: 800;
+    align-items: center;
+    img {
+      border-radius: 50%;
+      margin-right: 15px;
+      width: 30px;
+      height: 30px;
+      display: none;
+      @media (max-width: 500px) {
+        display: block;
+      }
+    }
+    > div {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h1 {
+        font-size: 20px;
+        font-weight: 800;
+      }
     }
   }
 }

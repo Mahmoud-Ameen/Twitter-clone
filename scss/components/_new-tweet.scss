@@ -61,7 +61,16 @@
             cursor: unset;
           }
         }
+        @media (max-width: 700px) {
+          .poll,
+          .schedule {
+            display: none;
+          }
+        }
       }
+    }
+    @media (max-width: 500px) {
+      display: none;
     }
   }
 }
