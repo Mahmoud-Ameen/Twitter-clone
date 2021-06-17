@@ -71,6 +71,7 @@ article.tweet {
           color: var(--color-primary);
           .icon {
             fill: var(--color-primary);
+            background-color: var(--color-primary-lightest);
           }
         }
         &.like:hover {
