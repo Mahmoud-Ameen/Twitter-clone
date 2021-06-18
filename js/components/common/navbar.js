@@ -3,7 +3,7 @@ export default function navbar () {
 	<header id='navbar'>
   <nav >
     <ul>
-      <li class='nav__link'>
+      <li class='nav__link logo'>
         <span class='icon nav__link__icon icon--circle logo color-primary '>
           <svg
             viewBox='0 0 24 24'

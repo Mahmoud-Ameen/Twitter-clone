@@ -3,8 +3,9 @@
   border-radius: 20px;
   cursor: pointer;
   padding: 5px 15px;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: capitalize;
   &--primary {
     background-color: var(--color-primary);
     transition: background-color 0.1s;
@@ -18,5 +19,9 @@
     width: 100%;
     padding: 15px 0;
     border-radius: 25px;
+  }
+  &--outline {
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
   }
 }

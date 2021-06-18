@@ -1,0 +1,21 @@
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ebeef0;
+  border-radius: 30px;
+  padding: 0 15px;
+  input[type='search'] {
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    padding: 15px;
+    font-size: 15px;
+    &:focus {
+      outline: none;
+    }
+  }
+  svg {
+    width: 20px;
+  }
+}

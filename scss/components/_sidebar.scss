@@ -1,0 +1,39 @@
+@import '../components/_searchBar';
+@import '../components/user';
+@import '../components/topic';
+
+aside#sidebar {
+  padding: 10px 20px;
+  .block {
+    .block__heading {
+      margin: 15px 0;
+      font-weight: 800;
+      padding: 10px;
+      font-size: 20px;
+      line-height: 24px;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .show-more {
+      color: var(--color-primary);
+      padding: 15px;
+      font-size: 16px;
+      border-radius: 0 0 15px 15px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      &:hover {
+        background-color: var(--color-border);
+      }
+    }
+  }
+  .copyrights {
+    padding: 15px;
+    color: var(--color-text-secondary);
+    span {
+      color: var(--color-primary);
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
