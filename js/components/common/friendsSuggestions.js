@@ -4,7 +4,7 @@ export default function friendsSuggestions () {
   return `
 	<!-- People to follow -->
 		<div class="block who-to-follow">
-			<h3 class="block__heading">Who to follow</h3>
+			<p class="block__heading">Who to follow</p>
 			<div class="block__body">
 				${user()}
 				${user()}

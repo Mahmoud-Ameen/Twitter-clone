@@ -3,7 +3,7 @@ import topic from './topic'
 export default function name (params) {
   return `
 	<div class='block topics-to-follow'>
-		<h3 class='block__heading'>Topics to follow</h3>
+		<p class='block__heading'>Topics to follow</p>
 		<div class='block__body'>
 			${topic}
 			${topic}

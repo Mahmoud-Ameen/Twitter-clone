@@ -2,7 +2,7 @@ export default function user () {
   return `
 		<div class="user">
 			<div class="user__image">
-				<img alt="user name" draggable="true" src="https://pbs.twimg.com/profile_images/595659104384905218/bOtXKmdP_normal.jpg">			</div>
+				<img width="48px" height="48px" alt="user name" draggable="true" src="https://pbs.twimg.com/profile_images/595659104384905218/bOtXKmdP_normal.jpg">			</div>
 			<div class="user__info">
 				<!-- This div is just for grouping -->
 				<div>

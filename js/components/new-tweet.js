@@ -2,7 +2,7 @@ export default function newTweet () {
   return `
 	<div class='new-tweet'>
     <div class='user-image'>
-      <img alt="Mahmoud" draggable="true" src="https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png" >
+      <img alt="Mahmoud" width="48px" height="48px" draggable="true" src="https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png" >
     </div>
     <div class='content'>
       <input type='text' class='new-tweet__text w-100' placeholder="What's happening?"

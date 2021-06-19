@@ -1,0 +1,50 @@
+@for $i from 1 through 4 {
+  // Padding
+  .p-#{$i} {
+    padding: $i * 5px;
+  }
+  .py-#{$i} {
+    padding-top: $i * 5px;
+    padding-bottom: $i * 5px;
+  }
+  .px-#{$i} {
+    padding-left: $i * 5px;
+    padding-right: $i * 5px;
+  }
+  .pt-#{$i} {
+    padding-top: $i * 5px;
+  }
+  .pr-#{$i} {
+    padding-right: $i * 5px;
+  }
+  .pl-#{$i} {
+    padding-left: $i * 5px;
+  }
+  .pb-#{$i} {
+    padding-bottom: $i * 5px;
+  }
+  //  margin
+  .m-#{$i} {
+    margin: $i * 5px;
+  }
+  .my-#{$i} {
+    margin-top: $i * 5px;
+    margin-bottom: $i * 5px;
+  }
+  .mx-#{$i} {
+    margin-left: $i * 5px;
+    margin-right: $i * 5px;
+  }
+  .mt-#{$i} {
+    margin-top: $i * 5px;
+  }
+  .mr-#{$i} {
+    margin-right: $i * 5px;
+  }
+  .ml-#{$i} {
+    margin-left: $i * 5px;
+  }
+  .mb-#{$i} {
+    margin-bottom: $i * 5px;
+  }
+}

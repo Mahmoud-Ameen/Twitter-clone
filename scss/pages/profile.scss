@@ -1,0 +1,86 @@
+@import '../general/general';
+@import '../general/layout';
+@import '../components/navbar';
+@import '../components/buttons';
+@import '../components/new-tweet';
+@import '../components/tweet';
+@import '../components/sidebar';
+@import '../general/margin-padding';
+@import '../components/tabs';
+
+.profile {
+  .heading {
+    background-color: var(--color-background);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7.5px 15px;
+    .back-btn {
+      margin-right: 15px;
+    }
+    > div {
+      display: flex;
+      align-items: center;
+      h1 {
+        font-size: 20px;
+        font-weight: 800;
+      }
+      .tweets-count {
+        color: var(--color-text-secondary);
+      }
+    }
+  }
+  .profile-info {
+    .cover {
+      width: 100%;
+      height: 200px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .body {
+      padding: 0 15px;
+      .upper {
+        padding-top: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .profile-image {
+          margin-top: -12%;
+          flex: 0 1 24%;
+          max-width: 135px;
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            cursor: pointer;
+          }
+        }
+        .actions {
+          display: flex;
+          .action {
+            margin: 0 5px;
+          }
+        }
+      }
+      .profile__name {
+        display: flex;
+        align-items: center;
+        .verified {
+          margin-left: 2px;
+          svg {
+            width: 20px;
+          }
+        }
+      }
+      .following,
+      .followers {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

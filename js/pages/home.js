@@ -5,11 +5,13 @@ import sideBar from '../components/common/sidebar.js'
 
 export default function HomePage () {
   return `
+	<link rel='preload' as='style' href='./css/home.min.css' />
+	<link rel="stylesheet" href="./css/home.min.css">
 	<div id='page-layout'>
 		${navbar()}
 		<main id="main-section">
 			<div class="heading">
-				<img alt="Mahmoud" draggable="true" src="https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png">
+				<img alt="Mahmoud" width="30px" height="30px" draggable="true" src="https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png">
 				<div>
 					<h1>Home</h1>
 					<div class="icon color-primary">

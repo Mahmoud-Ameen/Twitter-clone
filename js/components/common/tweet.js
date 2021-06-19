@@ -2,7 +2,7 @@ export default function tweet () {
   return `
 <article class="tweet">
 	<div class="author-image">
-		<img alt="author name" src="https://s3-us-west-2.amazonaws.com/ca3db/pbs.twimg.com/4bf02bf3adcae7c42f0e6f4a0d37015593344889a48b11df1e060c2125eb2fd8.jpg">
+		<img alt="author name" width="48px" height="48px" src="https://s3-us-west-2.amazonaws.com/ca3db/pbs.twimg.com/4bf02bf3adcae7c42f0e6f4a0d37015593344889a48b11df1e060c2125eb2fd8.jpg">
 	</div>
 	<div class="content">
 		<div class="upper">

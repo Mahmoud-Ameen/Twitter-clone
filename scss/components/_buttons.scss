@@ -2,7 +2,7 @@
   border: 0;
   border-radius: 20px;
   cursor: pointer;
-  padding: 5px 15px;
+  padding: 7.5px 15px;
   font-size: 15px;
   font-weight: 700;
   text-transform: capitalize;
@@ -22,6 +22,11 @@
   }
   &--outline {
     color: var(--color-primary);
+    background-color: transparent;
     border: 1px solid var(--color-primary);
+    transition: background-color 0.15s ease;
+    &:hover {
+      background-color: var(--color-primary-lightest);
+    }
   }
 }
