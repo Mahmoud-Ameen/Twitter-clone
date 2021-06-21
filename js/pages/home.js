@@ -2,9 +2,11 @@ import navbar from '../components/common/navbar.js'
 import newTweet from '../components/new-tweet.js'
 import homeFeed from '../components/feed.js'
 import sideBar from '../components/common/sidebar.js'
+import store from '../store/store.js'
 
 export default function HomePage () {
-  return `
+  const dom = document.createElement('div')
+  dom.innerHTML = `
 	<link rel='preload' as='style' href='./css/home.min.css' />
 	<link rel="stylesheet" href="./css/home.min.css">
 	<div id='page-layout'>
@@ -19,11 +21,24 @@ export default function HomePage () {
 					</div>
 				</div>
 			</div>
-			${newTweet()}
-			${homeFeed()}
+			<div class="new-tweet-container"></div>
+			<div class="homeFeedContainer"></div>
 		</main>
 		${sideBar()}
 	</div>
 
 	`
+
+  // This part is responsible for rerender elements
+  dom.querySelector('.new-tweet-container').appendChild(newTweet())
+  const loadFeed = () => {
+    dom.querySelector('.homeFeedContainer').innerHTML = ''
+    dom.querySelector('.homeFeedContainer').appendChild(homeFeed())
+  }
+
+  loadFeed()
+
+  store.subscribe('tweets', loadFeed)
+
+  return dom
 }

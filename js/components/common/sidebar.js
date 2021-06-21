@@ -1,5 +1,5 @@
 import searchBar from './searchBar.js'
-import topic from './topic.js'
+import topicsSuggesstions from './topicsSuggestions.js'
 import friendsSuggestions from './friendsSuggestions.js'
 
 export default function sidebar () {
@@ -11,7 +11,8 @@ export default function sidebar () {
 		${friendsSuggestions()}
 
 		<!-- Topics to follow -->
-		
+		${topicsSuggesstions()}
+
 		<!-- Copyrights -->
 		<div class="copyrights">
 			All &copy; rights reserved <br>
