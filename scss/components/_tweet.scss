@@ -76,11 +76,17 @@ article.tweet {
             background-color: var(--color-primary-lightest);
           }
         }
-        &.like:hover {
-          color: red;
-          .icon {
+        &.like {
+          &.active {
             fill: red;
-            background-color: lighten(red, 43);
+            color: red;
+          }
+          &:hover {
+            color: red;
+            .icon {
+              fill: red;
+              background-color: lighten(red, 43);
+            }
           }
         }
         &.retweet:hover {

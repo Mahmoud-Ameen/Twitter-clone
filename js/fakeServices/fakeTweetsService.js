@@ -1,5 +1,6 @@
 import store from '../store/store.js'
 import usersService from './fakeUsersService.js'
+import authService from './fakeAuthService.js'
 
 // Creating a new tweet
 const createTweet = (text, images, links) => {
@@ -7,7 +8,6 @@ const createTweet = (text, images, links) => {
     slice: 'tweets',
     type: 'createTweet',
     payload: {
-      authorId: 0 /* replace this with the id got from auth service */,
       text,
       images,
       links
@@ -15,34 +15,82 @@ const createTweet = (text, images, links) => {
   })
 }
 
-// Like a tweet
-const LikeTweet = tweetId => {
-  store.dispatch({
-    slice: 'tweets',
-    action: 'likeTweet',
-    payload: {
-      userId: 0 /* replace this with the id got from auth service */,
-      tweetId
-    }
-  })
+// * Like a tweet
+const handleLikeTweet = tweetId => {
+  // Get current user id
+  const currentUserId = authService.getCurrentUser().id
+
+  // check if the user already liked this tweet
+  const tweets = store.getState('tweets')
+  if (tweets[tweetId].likersIds.has(currentUserId))
+    store.dispatch({
+      slice: 'tweets',
+      type: 'unlikeTweet',
+      payload: {
+        tweetId
+      }
+    })
+  else
+    store.dispatch({
+      slice: 'tweets',
+      type: 'likeTweet',
+      payload: {
+        tweetId
+      }
+    })
 }
 
-// generate a feed
+// generate a home feed
 const getHomeFeed = () => {
   const tweets = store.getState('tweets')
   let feedData = []
 
-  for (const key in tweets) {
-    let tweet = tweets[key]
+  for (const id in tweets) {
+    let tweet = tweets[id]
 
     let { name, username, image, isVerified } = usersService.getUserData(
       tweet.authorId
     )
-    tweet = { ...tweet, author: { name, username, image, isVerified } }
+    tweet = {
+      ...tweet,
+      id: parseInt(id),
+      author: { name, username, image, isVerified }
+    }
 
     feedData.push({ ...tweet })
   }
-  return feedData
+  return feedData.reverse()
 }
 
-export default { createTweet, LikeTweet, getHomeFeed }
+// get User's tweets feed
+const getUserTweets = userId => {
+  let { tweetsIds } = usersService.getUserData(userId)
+  tweetsIds = Array.from(tweetsIds)
+
+  console.log('tweetsIDs', tweetsIds)
+
+  const allTweets = store.getState('tweets')
+
+  let feedData = []
+
+  tweetsIds.forEach(id => {
+    console.log('tweetid', id)
+    let tweet = allTweets[id]
+
+    let { name, username, image, isVerified } = usersService.getUserData(
+      tweet.authorId
+    )
+    tweet = {
+      ...tweet,
+      id: parseInt(id),
+      author: { name, username, image, isVerified }
+    }
+
+    feedData.push({ ...tweet })
+  })
+
+  console.log(feedData)
+  return feedData.reverse()
+}
+
+export default { createTweet, handleLikeTweet, getHomeFeed, getUserTweets }

@@ -5,10 +5,11 @@ function createStore (reducer) {
     users: {
       0: {
         name: 'Mahmoud Ashraf',
-        username: '@myUsername',
+        username: 'myUsername',
         image:
           'https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png',
-        bio: 'Front end web Developer <br><br>',
+        coverImage: 'https://source.unsplash.com/random/600x200',
+        bio: 'Front end web Developer ',
         followersIds: new Set([0]),
         followingsIds: new Set([1]),
         tweetsIds: new Set([0]),
@@ -34,12 +35,11 @@ function createStore (reducer) {
       0: {
         authorId: 0,
         publishDate: 'Jul 22, 2020',
-        text:
-          '<p class="text-headings">Welcome to Twitter clone</p> <br> Code by <a href="https://github.com/Mahmoud-Ashraf1">Mahmoud</a>',
-        links: ['https://t.co/otyPN0C9PE?amp=1'],
+        text: '<h3 class="text-headings">Welcome to Twitter clone</h3>',
+        links: [],
         images: [],
         retweetersIds: new Set(),
-        likersIds: new Set([1])
+        likersIds: new Set([1, 0])
       },
       1: {
         authorId: 1,
@@ -48,8 +48,20 @@ function createStore (reducer) {
         links: ['https://t.co/otyPN0C9PE?amp=1'],
         images: [],
         retweetersIds: new Set().add(1),
-        likersIds: new Set([1, 2])
+        likersIds: new Set([0, 1])
+      },
+      2: {
+        authorId: 1,
+        publishDate: 'Jul 22, 2020',
+        text: '5 Great JavaScript Frameworks for 2020 -',
+        links: ['https://t.co/otyPN0C9PE?amp=1'],
+        images: [],
+        retweetersIds: new Set().add(1),
+        likersIds: new Set([0, 1])
       }
+    },
+    auth: {
+      currentUser: { id: 0 }
     }
   }
   let callbacks = {}
@@ -67,7 +79,7 @@ function createStore (reducer) {
       [sliceName]: reducer(state[sliceName], action)
     }
 
-    console.log(action.type, '=>', state[sliceName])
+    console.log(action.slice + '/' + action.type, '=>', state[sliceName])
 
     // Execute any callback functions related to this slice
     if (callbacks[sliceName]) {

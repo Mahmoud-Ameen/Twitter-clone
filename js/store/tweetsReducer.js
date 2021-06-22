@@ -1,14 +1,18 @@
+import authService from '../fakeServices/fakeAuthService.js'
+import store from './store.js'
+
 export default (tweets, action) => {
   // Copying the state to another variable to avoid direct mutation
   let updatedTweets = { ...tweets }
 
+  // * Creating a tweet
   if (action.type === 'createTweet') {
-    console.log('action createTweet called')
     // Get last tweet id
     let newTweetId = Object.keys(tweets).length
 
     // get tweet data from the action
-    let { authorId, text, links, images } = action.payload
+    let { text, links, images } = action.payload
+    let authorId = authService.getCurrentUser().id
 
     // Get and format publish date
     let publishDate = getFormattedDate()
@@ -23,18 +27,47 @@ export default (tweets, action) => {
       likersIds: new Set(),
       retweetersIds: new Set()
     }
+
+    // add the tweet to the user's tweets list
+    store.dispatch({
+      slice: 'users',
+      type: 'addTweet',
+      payload: { tweetId: newTweetId }
+    })
   }
 
-  // Like a tweet
+  // * Like a tweet
   else if (action.type === 'likeTweet') {
-    // Should get the author data from the auth service
-    // But i will get it from the action object for now
+    const { tweetId } = action.payload
 
-    const { tweetId, userId } = action.payload
-    updatedTweets[tweetId] = {
-      ...updatedTweets[tweetId],
-      likersIds: updatedTweets[tweetId].likersIds.add(userId)
-    }
+    // get current logged in user id
+    const userId = authService.getCurrentUser().id
+
+    updatedTweets[tweetId].likersIds.add(userId)
+
+    // Update the user's likedTweets list
+    store.dispatch({
+      slice: 'users',
+      type: 'likeTweet',
+      payload: { tweetId }
+    })
+  }
+
+  // * Unlike a tweet *
+  else if (action.type === 'unlikeTweet') {
+    const { tweetId } = action.payload
+
+    // get current logged in user id
+    const userId = authService.getCurrentUser().id
+
+    updatedTweets[tweetId].likersIds.delete(userId)
+
+    // Update the user's likedTweets list
+    store.dispatch({
+      slice: 'users',
+      type: 'unlikeTweet',
+      payload: { tweetId }
+    })
   }
 
   return updatedTweets

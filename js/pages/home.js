@@ -3,6 +3,7 @@ import newTweet from '../components/new-tweet.js'
 import homeFeed from '../components/feed.js'
 import sideBar from '../components/common/sidebar.js'
 import store from '../store/store.js'
+import fakeTweetsService from '../fakeServices/fakeTweetsService.js'
 
 export default function HomePage () {
   const dom = document.createElement('div')
@@ -29,11 +30,16 @@ export default function HomePage () {
 
 	`
 
+  // Get home feed data
+
   // This part is responsible for rerender elements
   dom.querySelector('.new-tweet-container').appendChild(newTweet())
+
   const loadFeed = () => {
+    const feedTweets = fakeTweetsService.getHomeFeed()
+
     dom.querySelector('.homeFeedContainer').innerHTML = ''
-    dom.querySelector('.homeFeedContainer').appendChild(homeFeed())
+    dom.querySelector('.homeFeedContainer').appendChild(homeFeed(feedTweets))
   }
 
   loadFeed()

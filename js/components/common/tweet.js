@@ -1,15 +1,24 @@
+import { goToPage } from '../../app.js'
+import authService from '../../fakeServices/fakeAuthService.js'
+import tweetsService from '../../fakeServices/fakeTweetsService.js'
+
 export default function tweet (tweetData) {
-  return `
-<article class="tweet">
+  const dom = document.createElement('article')
+
+  const currentUserId = authService.getCurrentUser().id
+
+  dom.className = 'tweet'
+  dom.innerHTML = `
 	<div class="author-image">
 		<img alt="author name" width="48px" height="48px" src=${tweetData.author.image}>
 	</div>
 	<div class="content">
 		<div class="upper">
 			<div>
-				<a href = "#" class="author">
+				<a href = ${'#user?' + tweetData.authorId} class="author">
 					<span class="author-name">${tweetData.author.name}</span>
-					<span class="author-username">@${tweetData.author.username}</span></a>
+					<span class="author-username">@${tweetData.author.username}</span>
+				</a>
 				<span class="publish-date">${tweetData.publishDate}</span>
 			</div>
 			<span class="icon more"><svg viewBox="0 0 24 24" aria-hidden="true"><g><circle cx="5" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle></g></svg></span>
@@ -43,9 +52,22 @@ export default function tweet (tweetData) {
 				</span>
 				${tweetData.retweetersIds.size}
 			</span>
-			<span class="action like">
+			<span class='action like'>
 				<span class="icon">
-					<svg viewBox="0 0 24 24" aria-hidden="true" class="r-4qtqp9 r-yyyyoo r-1xvli5t r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-1hdv0qi"><g><path d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z"></path></g></svg>
+				${
+          // Should pass the id from auth service
+          tweetData.likersIds.has(currentUserId)
+            ? `<svg viewBox='0 0 24 24' aria-hidden='true' style="fill:red">
+              <g>
+                <path d='M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12z'></path>
+              </g>
+            </svg>`
+            : `<svg viewBox='0 0 24 24' aria-hidden='true'>
+              <g>
+                <path d='M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z'></path>
+              </g>
+            </svg>`
+        }
 				</span>
 				${tweetData.likersIds.size}
 			</span>
@@ -56,6 +78,18 @@ export default function tweet (tweetData) {
 			</span>
 		</div>
 	</div>
-</article>
-`
+	`
+
+  // Event listiners
+  dom
+    .querySelector('.action.like')
+    .addEventListener('click', () =>
+      tweetsService.handleLikeTweet(tweetData.id)
+    )
+
+  dom
+    .querySelector('.author-image')
+    .addEventListener('click', () => goToPage(`user?${tweetData.authorId}`))
+
+  return dom
 }
