@@ -7,11 +7,10 @@ import fakeTweetsService from '../fakeServices/fakeTweetsService.js'
 
 export default function HomePage () {
   const dom = document.createElement('div')
+  dom.id = 'HomePage'
   dom.innerHTML = `
-	<link rel='preload' as='style' href='./css/home.min.css' />
-	<link rel="stylesheet" href="./css/home.min.css">
 	<div id='page-layout'>
-		${navbar()}
+		<div class="navbarContainer"></div>
 		<main id="main-section">
 			<div class="heading">
 				<img alt="Mahmoud" width="30px" height="30px" draggable="true" src="https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png">
@@ -34,6 +33,7 @@ export default function HomePage () {
 
   // This part is responsible for rerender elements
   dom.querySelector('.new-tweet-container').appendChild(newTweet())
+  dom.querySelector('.navbarContainer').appendChild(navbar())
 
   const loadFeed = () => {
     const feedTweets = fakeTweetsService.getHomeFeed()

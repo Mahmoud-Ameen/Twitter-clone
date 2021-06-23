@@ -75,9 +75,15 @@
         .bookmarks,
         .profile,
         .more,
-        .logo,
-        .tweet-btn-icon {
+        .logo {
           display: none;
+        }
+        .tweet-btn-icon {
+          display: block;
+          position: absolute;
+          top: 0;
+          transform: translateY(-120%);
+          right: 6%;
         }
         .nav__link {
           margin-bottom: 0;

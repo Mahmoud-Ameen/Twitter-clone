@@ -26,7 +26,7 @@ function createStore (reducer) {
         bio: 'Tweets from the Oracle Developer Relations Team @groundbreakers',
         followersIds: new Set([1]),
         followingsIds: new Set([0]),
-        tweetsIds: new Set([1]),
+        tweetsIds: new Set([1, 2]),
         likedTweets: new Set([0, 1]),
         isVerified: true
       }
@@ -53,8 +53,8 @@ function createStore (reducer) {
       2: {
         authorId: 1,
         publishDate: 'Jul 22, 2020',
-        text: '5 Great JavaScript Frameworks for 2020 -',
-        links: ['https://t.co/otyPN0C9PE?amp=1'],
+        text: 'Do you really need javascript frameworks ?',
+        links: ['google.com'],
         images: [],
         retweetersIds: new Set().add(1),
         likersIds: new Set([0, 1])

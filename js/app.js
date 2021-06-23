@@ -1,10 +1,11 @@
-import store from './store/store.js'
 import HomePage from './pages/home.js'
 import ProfilePage from './pages/profile.js'
+import CreateTweet from './pages/createTweet.js'
 
 const routes = {
   '#home': HomePage,
-  '#user': ProfilePage
+  '#user': ProfilePage,
+  '#composeTweet': CreateTweet
 }
 
 const routing = () => {

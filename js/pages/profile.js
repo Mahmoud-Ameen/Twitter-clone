@@ -17,7 +17,7 @@ export default function profile (userId) {
 	<link rel="stylesheet" href="./css/profile.min.css">
 	<div id='page-layout'>
 		<!-- #region navbar -->
-		${navbar()}
+		<div class="navbarContainer"></div>
 		<!-- #endregion  -->
 		<main id="main-section" class="profile">
 
@@ -50,6 +50,7 @@ export default function profile (userId) {
 	</div>
 	`
 
+  dom.querySelector('.navbarContainer').appendChild(navbar())
   // Get user feed data
   const feedData = fakeTweetsService.getUserTweets(userId)
 

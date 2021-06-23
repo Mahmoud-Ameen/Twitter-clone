@@ -1,0 +1,22 @@
+@import '../general/general';
+@import '../components/new-tweet';
+
+.create-tweet-modal {
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-background);
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .new-tweet {
+    display: grid;
+  }
+  input.new-tweet__text {
+    padding-bottom: 50px !important;
+  }
+}

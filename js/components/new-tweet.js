@@ -1,4 +1,3 @@
-import store from '../store/store.js'
 import tweetsService from '../fakeServices/fakeTweetsService.js'
 
 export default function newTweet () {

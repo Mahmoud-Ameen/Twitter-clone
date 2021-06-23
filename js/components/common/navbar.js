@@ -1,5 +1,8 @@
+import { goToPage } from '../../app.js'
+
 export default function navbar () {
-  return `
+  const dom = document.createElement('div')
+  dom.innerHTML = `
 	<header id='navbar'>
   <nav >
     <ul>
@@ -144,4 +147,13 @@ export default function navbar () {
 	</header>
 
 		`
+  dom
+    .querySelector('.nav__link.home')
+    .addEventListener('click', () => goToPage('home'))
+
+  dom.querySelector('.tweet-btn-icon').addEventListener('click', () => {
+    goToPage('composeTweet')
+  })
+
+  return dom
 }
