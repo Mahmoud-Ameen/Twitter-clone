@@ -16,7 +16,7 @@ export default function followingsPage (username) {
   dom.innerHTML = `
 	<div id='page-layout'>
 		<!-- #region navbar -->
-		<link rel="stylesheet" href="../../css/followings.min.css">
+		<link rel="stylesheet" href="./css/followings.min.css">
 		<div class="navbarContainer"></div>
 		<!-- #endregion  -->
 		<main id="main-section" class="followings">
