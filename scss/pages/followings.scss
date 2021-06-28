@@ -1,0 +1,30 @@
+@import '../general/general';
+@import '../general/layout';
+@import '../components/navbar';
+@import '../components/buttons';
+@import '../components/sidebar';
+@import '../components/tabs';
+#followings,
+#followers {
+  .heading {
+    background-color: var(--color-background);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7.5px 15px;
+    .back-btn {
+      margin-right: 15px;
+    }
+    > div {
+      display: flex;
+      align-items: center;
+      h1 {
+        font-size: 20px;
+        font-weight: 800;
+      }
+      .username {
+        color: var(--color-text-secondary);
+      }
+    }
+  }
+}

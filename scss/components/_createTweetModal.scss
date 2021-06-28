@@ -1,10 +1,11 @@
 @import '../general/general';
 @import '../components/new-tweet';
+@import '../components/modal';
 
-.create-tweet-modal {
-  height: 100%;
-  width: 100%;
+.createTweetModal {
   overflow: hidden;
+  max-width: 600px;
+  border-radius: 20px;
   background-color: var(--color-background);
   .heading {
     width: 100%;

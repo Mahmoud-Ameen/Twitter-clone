@@ -5,7 +5,7 @@ import tweetsService from '../../fakeServices/fakeTweetsService.js'
 export default function tweet (tweetData) {
   const dom = document.createElement('article')
 
-  const currentUserId = authService.getCurrentUser().id
+  const currentUser = authService.getCurrentUser()
 
   dom.className = 'tweet'
   dom.innerHTML = `
@@ -15,7 +15,7 @@ export default function tweet (tweetData) {
 	<div class="content">
 		<div class="upper">
 			<div>
-				<a href = ${'#user?' + tweetData.authorId} class="author">
+				<a href = ${'#user?' + tweetData.author.username} class="author">
 					<span class="author-name">${tweetData.author.name}</span>
 					<span class="author-username">@${tweetData.author.username}</span>
 				</a>
@@ -23,7 +23,7 @@ export default function tweet (tweetData) {
 			</div>
 			<span class="icon more"><svg viewBox="0 0 24 24" aria-hidden="true"><g><circle cx="5" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle></g></svg></span>
 		</div>
-		<div class="tweet-body">
+		<div class="tweet-body" style= ${'direction:' + tweetData.direction}>
 			${tweetData.text}
 			<!-- Render links -->
 			${
@@ -50,13 +50,13 @@ export default function tweet (tweetData) {
 				<span class="icon">
 					<svg viewBox="0 0 24 24" aria-hidden="true" class="r-4qtqp9 r-yyyyoo r-1xvli5t r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-1hdv0qi"><g><path d="M23.77 15.67c-.292-.293-.767-.293-1.06 0l-2.22 2.22V7.65c0-2.068-1.683-3.75-3.75-3.75h-5.85c-.414 0-.75.336-.75.75s.336.75.75.75h5.85c1.24 0 2.25 1.01 2.25 2.25v10.24l-2.22-2.22c-.293-.293-.768-.293-1.06 0s-.294.768 0 1.06l3.5 3.5c.145.147.337.22.53.22s.383-.072.53-.22l3.5-3.5c.294-.292.294-.767 0-1.06zm-10.66 3.28H7.26c-1.24 0-2.25-1.01-2.25-2.25V6.46l2.22 2.22c.148.147.34.22.532.22s.384-.073.53-.22c.293-.293.293-.768 0-1.06l-3.5-3.5c-.293-.294-.768-.294-1.06 0l-3.5 3.5c-.294.292-.294.767 0 1.06s.767.293 1.06 0l2.22-2.22V16.7c0 2.068 1.683 3.75 3.75 3.75h5.85c.414 0 .75-.336.75-.75s-.337-.75-.75-.75z"></path></g></svg>
 				</span>
-				${tweetData.retweetersIds.size}
+				${tweetData.retweeters.size}
 			</span>
 			<span class='action like'>
 				<span class="icon">
 				${
           // Should pass the id from auth service
-          tweetData.likersIds.has(currentUserId)
+          tweetData.likers.has(currentUser)
             ? `<svg viewBox='0 0 24 24' aria-hidden='true' style="fill:red">
               <g>
                 <path d='M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12z'></path>
@@ -69,7 +69,7 @@ export default function tweet (tweetData) {
             </svg>`
         }
 				</span>
-				${tweetData.likersIds.size}
+				${tweetData.likers.size}
 			</span>
 			<span class="action share">
 				<span class="icon">
@@ -81,15 +81,22 @@ export default function tweet (tweetData) {
 	`
 
   // Event listiners
+
+  dom
+    .querySelector('.tweet-body')
+    .addEventListener('click', () => goToPage(`tweet?${tweetData.id}`))
+
+  dom
+    .querySelector('.author-image')
+    .addEventListener('click', () =>
+      goToPage(`user?${tweetData.author.username}`)
+    )
+
   dom
     .querySelector('.action.like')
     .addEventListener('click', () =>
       tweetsService.handleLikeTweet(tweetData.id)
     )
-
-  dom
-    .querySelector('.author-image')
-    .addEventListener('click', () => goToPage(`user?${tweetData.authorId}`))
 
   return dom
 }

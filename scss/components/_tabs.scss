@@ -4,8 +4,9 @@
   display: flex;
   border-bottom: 1px solid var(--color-border);
 
-  .tab {
-    flex: 1 1 auto;
+  .tab,
+  > * {
+    flex: 1 0 auto;
     height: 100%;
     display: flex;
     align-items: center;

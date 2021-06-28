@@ -18,11 +18,11 @@ const createTweet = (text, images, links) => {
 // * Like a tweet
 const handleLikeTweet = tweetId => {
   // Get current user id
-  const currentUserId = authService.getCurrentUser().id
+  const currentUser = authService.getCurrentUser()
 
   // check if the user already liked this tweet
   const tweets = store.getState('tweets')
-  if (tweets[tweetId].likersIds.has(currentUserId))
+  if (tweets[tweetId].likers.has(currentUser))
     store.dispatch({
       slice: 'tweets',
       type: 'unlikeTweet',
@@ -46,51 +46,49 @@ const getHomeFeed = () => {
   let feedData = []
 
   for (const id in tweets) {
-    let tweet = tweets[id]
-
-    let { name, username, image, isVerified } = usersService.getUserData(
-      tweet.authorId
-    )
-    tweet = {
-      ...tweet,
-      id: parseInt(id),
-      author: { name, username, image, isVerified }
-    }
+    let tweet = getTweetInfo(id)
 
     feedData.push({ ...tweet })
   }
   return feedData.reverse()
 }
 
+const getTweetInfo = tweetId => {
+  const tweets = store.getState('tweets')
+
+  let tweet = tweets[tweetId]
+
+  let { name, username, image, isVerified } = usersService.getUserData(
+    tweet.author
+  )
+  tweet = {
+    ...tweet,
+    id: parseInt(tweetId),
+    author: { name, username, image, isVerified }
+  }
+  return tweet
+}
+
 // get User's tweets feed
-const getUserTweets = userId => {
-  let { tweetsIds } = usersService.getUserData(userId)
+const getUserTweets = username => {
+  let { tweetsIds } = usersService.getUserData(username)
   tweetsIds = Array.from(tweetsIds)
-
-  console.log('tweetsIDs', tweetsIds)
-
-  const allTweets = store.getState('tweets')
 
   let feedData = []
 
   tweetsIds.forEach(id => {
-    console.log('tweetid', id)
-    let tweet = allTweets[id]
-
-    let { name, username, image, isVerified } = usersService.getUserData(
-      tweet.authorId
-    )
-    tweet = {
-      ...tweet,
-      id: parseInt(id),
-      author: { name, username, image, isVerified }
-    }
+    let tweet = getTweetInfo(id)
 
     feedData.push({ ...tweet })
   })
 
-  console.log(feedData)
   return feedData.reverse()
 }
 
-export default { createTweet, handleLikeTweet, getHomeFeed, getUserTweets }
+export default {
+  createTweet,
+  handleLikeTweet,
+  getHomeFeed,
+  getUserTweets,
+  getTweetInfo
+}

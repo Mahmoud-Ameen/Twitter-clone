@@ -1,11 +1,15 @@
 import HomePage from './pages/home.js'
 import ProfilePage from './pages/profile.js'
-import CreateTweet from './pages/createTweet.js'
+import tweetPage from './pages/tweetPage.js'
+import followingsPage from './pages/followings.js'
+import followersPage from './pages/followers.js'
 
 const routes = {
   '#home': HomePage,
   '#user': ProfilePage,
-  '#composeTweet': CreateTweet
+  '#tweet': tweetPage,
+  '#followings': followingsPage,
+  '#followers': followersPage
 }
 
 const routing = () => {
@@ -31,6 +35,8 @@ window.addEventListener('popstate', routing)
 
 // *
 function loadPage (page, props) {
+  console.log(page)
+
   document.querySelector('.root').innerHTML = ''
   document.querySelector('.root').appendChild(page(props))
 }

@@ -12,20 +12,20 @@ export default (tweets, action) => {
 
     // get tweet data from the action
     let { text, links, images } = action.payload
-    let authorId = authService.getCurrentUser().id
+    let author = authService.getCurrentUser()
 
     // Get and format publish date
     let publishDate = getFormattedDate()
 
     // Update the tweets List
     updatedTweets[newTweetId] = {
-      authorId,
+      author,
       text,
       links: links || [],
       images: images || [],
       publishDate,
-      likersIds: new Set(),
-      retweetersIds: new Set()
+      likers: new Set(),
+      retweeters: new Set()
     }
 
     // add the tweet to the user's tweets list
@@ -41,9 +41,9 @@ export default (tweets, action) => {
     const { tweetId } = action.payload
 
     // get current logged in user id
-    const userId = authService.getCurrentUser().id
+    const currentUser = authService.getCurrentUser()
 
-    updatedTweets[tweetId].likersIds.add(userId)
+    updatedTweets[tweetId].likers.add(currentUser)
 
     // Update the user's likedTweets list
     store.dispatch({
@@ -58,9 +58,9 @@ export default (tweets, action) => {
     const { tweetId } = action.payload
 
     // get current logged in user id
-    const userId = authService.getCurrentUser().id
+    const currentUser = authService.getCurrentUser()
 
-    updatedTweets[tweetId].likersIds.delete(userId)
+    updatedTweets[tweetId].likers.delete(currentUser)
 
     // Update the user's likedTweets list
     store.dispatch({

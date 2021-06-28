@@ -24,12 +24,13 @@ export default function HomePage () {
 			<div class="new-tweet-container"></div>
 			<div class="homeFeedContainer"></div>
 		</main>
-		${sideBar()}
+		<div class="sidebarContainer"></div>
 	</div>
 
 	`
 
-  // Get home feed data
+  // render sidebar
+  dom.querySelector('.sidebarContainer').appendChild(sideBar())
 
   // This part is responsible for rerender elements
   dom.querySelector('.new-tweet-container').appendChild(newTweet())

@@ -1,4 +1,5 @@
 import { goToPage } from '../../app.js'
+import createTweet from '../../pages/createTweetModal.js'
 
 export default function navbar () {
   const dom = document.createElement('div')
@@ -142,18 +143,27 @@ export default function navbar () {
           </svg>
         </button>
       </li>
-    </ul>
+      </ul>
+      <div class="newTweetModalContainer"></div>
   </nav>	
 	</header>
 
 		`
+
   dom
     .querySelector('.nav__link.home')
     .addEventListener('click', () => goToPage('home'))
 
-  dom.querySelector('.tweet-btn-icon').addEventListener('click', () => {
-    goToPage('composeTweet')
-  })
+  dom.querySelectorAll('.tweet-btn-icon,.tweet-btn').forEach(e =>
+    e.addEventListener('click', () => {
+      dom.querySelector('.newTweetModalContainer').innerHTML = ''
+      dom.querySelector('.newTweetModalContainer').appendChild(
+        createTweet(() => {
+          dom.querySelector('.newTweetModalContainer').innerHTML = ''
+        })
+      )
+    })
+  )
 
   return dom
 }

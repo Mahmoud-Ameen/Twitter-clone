@@ -1,12 +1,23 @@
-export default function Tabs() {
-	return `
+export default function Tabs (tabs) {
+  return `
 		<div class="mt-4">
-			<ul class="tabs">
-				<li class="tab active"><span>Tweets</span></li>
-				<li class="tab"><span>Tweet & replies</span></li>
-				<li class="tab"><span>Media</span></li>
-				<li class="tab"><span>Likes</span></li>
-			</ul>
+			<div class="tabs">
+				${tabs.map(tab =>
+          tab.active
+            ? `<div class='tab active'>
+              <span>${tab.title}</span>
+            </div>`
+            : tab.linkTo
+            ? `<a href=${tab.linkTo}>
+              <div class='tab'> 
+                <span>${tab.title}</span>
+              </div> 
+            </a>`
+            : `<div class='tab'>
+              <span>${tab.title}</span>
+            </div>`
+        )}
+			</div>
 		</div>
-	`;
+	`
 }

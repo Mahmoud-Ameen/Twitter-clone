@@ -7,9 +7,10 @@ import fakeUsersService from '../fakeServices/fakeUsersService.js'
 import fakeTweetsService from '../fakeServices/fakeTweetsService.js'
 import store from '../store/store.js'
 
-export default function profile (userId) {
+export default function profile (username) {
   // Get user profile data
-  const userData = fakeUsersService.getUserData(userId)
+  const userData = fakeUsersService.getUserData(username)
+  console.log('userData', userData)
 
   const dom = document.createElement('div')
   dom.innerHTML = `
@@ -36,32 +37,46 @@ export default function profile (userId) {
 			</div>
 			<!-- #endregion -->
 			<!-- User info -->
-			${ProfileInfo(userData)}
+			<div class="profileInfoContainer"></div>
 			<!--  tabs -->
-			${Tabs()}			
+			${Tabs([
+        { title: 'Tweets', active: true },
+        { title: 'Tweets & Replies' },
+        { title: 'Media' },
+        { title: 'Likes' }
+      ])}			
 			<!-- #region feed -->
 			<div class="feed-container"></div>
 			<!-- #endregion -->
 		</main>
 
 		<!-- #region sidebar -->
-		${sidebar()}
+		<div class="sidebarContainer"></div>
 		<!-- #endregion -->
 	</div>
 	`
 
   dom.querySelector('.navbarContainer').appendChild(navbar())
+  dom.querySelector('.sidebarContainer').appendChild(sidebar())
   // Get user feed data
-  const feedData = fakeTweetsService.getUserTweets(userId)
+  const feedData = fakeTweetsService.getUserTweets(username)
 
-  const loadFeed = () => {
+  const renderFeed = () => {
     dom.querySelector('.feed-container').innerHTML = ''
     dom.querySelector('.feed-container').appendChild(Feed(feedData))
   }
+  renderFeed()
 
-  loadFeed()
+  const renderUserInfo = () => {
+    dom.querySelector('.profileInfoContainer').innerHTML = ''
+    dom
+      .querySelector('.profileInfoContainer')
+      .appendChild(ProfileInfo(userData))
+  }
+  renderUserInfo()
 
-  store.subscribe('tweets', loadFeed)
+  store.subscribe('tweets', renderFeed)
+  store.subscribe('users', renderUserInfo)
 
   // Events listeners
   dom.querySelector('.back-btn').onclick = () => history.back()
