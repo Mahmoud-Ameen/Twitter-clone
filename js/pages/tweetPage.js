@@ -12,12 +12,9 @@ export default function tweetPage (tweetId) {
   let tweetData = tweetsService.getTweetInfo(tweetId)
   const currentUser = authService.getCurrentUser()
 
-  const tweetLikers = fakeUsersService.getUsersData(
-    Array.from(tweetData.likers)
-  )
-  const tweetRetweeters = fakeUsersService.getUsersData(
-    Array.from(tweetData.retweeters)
-  )
+  const tweetLikers = Array.from(tweetData.likers)
+
+  const tweetRetweeters = Array.from(tweetData.retweeters)
 
   const dom = document.createElement('div')
   dom.id = 'tweetPage'
@@ -177,7 +174,7 @@ export default function tweetPage (tweetId) {
       )
 
     // show likers users
-    dom.querySelector('.stat.likes').addEventListener('click', () => {
+    const loadLikersModal = () => {
       dom
         .querySelector('.usersModalContainer')
         .appendChild(
@@ -187,7 +184,9 @@ export default function tweetPage (tweetId) {
             () => (dom.querySelector('.usersModalContainer').innerHTML = '')
           )
         )
-    })
+    }
+    dom.querySelector('.stat.likes').addEventListener('click', loadLikersModal)
+
     // show retweeters users
     dom.querySelector('.stat.retweets').addEventListener('click', () => {
       dom

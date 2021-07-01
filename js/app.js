@@ -48,8 +48,6 @@ window.addEventListener('popstate', routing)
 
 // *
 function loadPage (page, props) {
-  console.log(page)
-
   document.querySelector('.root').innerHTML = ''
   document.querySelector('.root').appendChild(page(props))
 }

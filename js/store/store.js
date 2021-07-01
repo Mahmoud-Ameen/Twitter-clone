@@ -64,7 +64,7 @@ function createStore (reducer) {
         links: [],
         images: [],
         retweeters: new Set(),
-        likers: new Set(['JavaScript,MahmoudAshraf'])
+        likers: new Set(['JavaScript', 'MahmoudAshraf'])
       },
       1: {
         author: 'JavaScript',

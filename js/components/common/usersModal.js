@@ -1,3 +1,4 @@
+import store from '../../store/store.js'
 import UsersList from './usersList.js'
 
 export default function usersModal (users, title, closeFunc) {
@@ -23,7 +24,14 @@ export default function usersModal (users, title, closeFunc) {
 		</section>
 	
 	`
-  dom.querySelector('.usersListContainer').appendChild(UsersList(users))
+
   dom.querySelector('.close-btn').onclick = closeFunc
+
+  const loadUsers = () => {
+    dom.querySelector('.usersListContainer').innerHTML = ''
+    dom.querySelector('.usersListContainer').appendChild(UsersList(users))
+  }
+  loadUsers()
+  store.subscribe('users', loadUsers)
   return dom
 }

@@ -26,18 +26,14 @@ export default function sidebar () {
 
   const loadFriendsSuggesstions = () => {
     // TODO: get this data from users service
-    const usersData = []
     const usersnames = ['OsamaElzero', 'MahmoudAshraf', 'JavaScript']
-    usersnames.map(username => {
-      usersData.push(fakeUsersService.getUserData(username))
-    })
 
     //
 
     dom.querySelector('.friendSuggesstions').innerHTML = ''
     dom
       .querySelector('.friendSuggesstions')
-      .appendChild(friendsSuggestions(usersData))
+      .appendChild(friendsSuggestions(usersnames))
   }
   loadFriendsSuggesstions()
   store.subscribe('users', loadFriendsSuggesstions)

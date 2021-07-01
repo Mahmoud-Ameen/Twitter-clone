@@ -9,9 +9,6 @@ export default function followingsPage (username) {
   dom.id = 'followings'
 
   const user = fakeUsersService.getUserData(username)
-  const followingsData = fakeUsersService.getUsersData(
-    Array.from(user.followings)
-  )
 
   dom.innerHTML = `
 	<div id='page-layout'>
@@ -52,7 +49,9 @@ export default function followingsPage (username) {
   dom.querySelector('#navbar').appendChild(navbar('profile'))
   dom.querySelector('.sidebarContainer').appendChild(sidebar())
 
-  dom.querySelector('.usersContainer').appendChild(UsersList(followingsData))
+  dom
+    .querySelector('.usersContainer')
+    .appendChild(UsersList(Array.from(user.followings)))
 
   // Event Listiners
   dom.querySelector('.back-btn').onclick = () => history.back()

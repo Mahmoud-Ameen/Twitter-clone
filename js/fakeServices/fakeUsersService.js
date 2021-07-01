@@ -24,7 +24,6 @@ const getUsersData = usersnames => {
     username,
     isFollowed: currentUser.followings.has(username)
   }))
-  console.log(usersData)
   return usersData
 }
 
