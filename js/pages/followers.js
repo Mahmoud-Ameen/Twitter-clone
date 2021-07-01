@@ -17,7 +17,7 @@ export default function followersPage (username) {
 	<div id='page-layout'>
 		<!-- #region navbar -->
 		<link rel="stylesheet" href="../../css/followings.min.css">
-		<div class="navbarContainer"></div>
+		<header id='navbar'></header>
 		<!-- #endregion  -->
 		<main id="main-section" class="followings">
 
@@ -49,7 +49,7 @@ export default function followersPage (username) {
 	</div>
 	`
 
-  dom.querySelector('.navbarContainer').appendChild(navbar())
+  dom.querySelector('#navbar').appendChild(navbar('user'))
   dom.querySelector('.sidebarContainer').appendChild(sidebar())
 
   dom.querySelector('.usersContainer').appendChild(UsersList(followersData))

@@ -1,5 +1,6 @@
 import tweetsReducer from './tweetsReducer.js'
 import usersReducer from './usersReducer.js'
+import authReducer from './authReducer.js'
 
 export default (state, action) => {
   // This should pass the action and state to
@@ -10,6 +11,9 @@ export default (state, action) => {
 
     case 'tweets':
       return tweetsReducer(state, action)
+
+    case 'auth':
+      return authReducer(state, action)
 
     default:
       return state

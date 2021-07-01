@@ -1,5 +1,6 @@
 @import '../general/general';
 @import '../components/usersModal';
+@import '../general/layout';
 
 .tweet-page {
   .heading {
@@ -25,6 +26,7 @@
     .upper {
       display: flex;
       justify-content: space-between;
+      align-items: flex-start;
       .author {
         display: flex;
         align-items: center;

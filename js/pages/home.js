@@ -10,7 +10,7 @@ export default function HomePage () {
   dom.id = 'HomePage'
   dom.innerHTML = `
 	<div id='page-layout'>
-		<div class="navbarContainer"></div>
+		<header id="navbar"></header>
 		<main id="main-section">
 			<div class="heading">
 				<img alt="Mahmoud" width="30px" height="30px" draggable="true" src="https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png">
@@ -22,7 +22,7 @@ export default function HomePage () {
 				</div>
 			</div>
 			<div class="new-tweet-container"></div>
-			<div class="homeFeedContainer"></div>
+			<div class="homeFeedContainer" ></div>
 		</main>
 		<div class="sidebarContainer"></div>
 	</div>
@@ -34,7 +34,7 @@ export default function HomePage () {
 
   // This part is responsible for rerender elements
   dom.querySelector('.new-tweet-container').appendChild(newTweet())
-  dom.querySelector('.navbarContainer').appendChild(navbar())
+  dom.querySelector('#navbar').appendChild(navbar('home'))
 
   const loadFeed = () => {
     const feedTweets = fakeTweetsService.getHomeFeed()

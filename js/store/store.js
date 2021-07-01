@@ -6,8 +6,9 @@ function createStore (reducer) {
       MahmoudAshraf: {
         name: 'Mahmoud Ashraf',
         image:
-          'https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png',
-        coverImage: 'https://source.unsplash.com/random/600x200',
+          'https://pbs.twimg.com/profile_images/1410218352346288131/_Bufsj5f_200x200.jpg',
+        coverImage:
+          'https://pbs.twimg.com/profile_banners/1193209758528004098/1625057708/600x200',
         bio: 'Front end web Developer ',
         followers: new Set(['JavaScript']),
         followings: new Set(['JavaScript', 'OsamaElzero']),
@@ -40,6 +41,19 @@ function createStore (reducer) {
         tweetsIds: new Set([3]),
         likedTweets: new Set([0, 1]),
         isVerified: true
+      },
+      User12346: {
+        password: 'password',
+        name: 'user gamed',
+        image:
+          'https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png',
+        coverImage:
+          'https://pbs.twimg.com/profile_banners/883839043/1475182691/600x200',
+        bio: '',
+        followers: new Set(['MahmoudAshraf']),
+        followings: new Set(['MahmoudAshraf', 'OsamaElzero', 'JavaScript']),
+        tweetsIds: new Set(),
+        likedTweets: new Set()
       }
     },
     tweets: {

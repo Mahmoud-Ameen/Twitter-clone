@@ -26,7 +26,7 @@ export default function tweetPage (tweetId) {
 	<link rel="stylesheet" href="./css/tweetPage.min.css">
 	<div id='page-layout'>
 		<!-- #region navbar -->
-		<div class="navbarContainer"></div>
+		<header id="navbar"></header>
 		<!-- #endregion  -->
 		<main id="main-section" class="tweet-page">
 
@@ -60,10 +60,12 @@ export default function tweetPage (tweetId) {
 
 	`
 
-  dom.querySelector('.navbarContainer').appendChild(navbar())
+  dom.querySelector('#navbar').appendChild(navbar('home'))
 
   // Events listeners
   dom.querySelector('.back-btn').onclick = () => history.back()
+
+  dom.querySelector('.sidebarContainer').appendChild(sidebar())
 
   const loadTweet = () => {
     const tweet = document.createElement('div')
@@ -161,9 +163,6 @@ export default function tweetPage (tweetId) {
 				`
     dom.querySelector('.tweet-preview').innerHTML = ''
     dom.querySelector('.tweet-preview').append(tweet)
-
-    dom.querySelector('.sidebarContainer').appendChild(sidebar())
-
     // Event listiners
     dom
       .querySelector('.action.like')

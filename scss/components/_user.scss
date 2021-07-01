@@ -13,7 +13,7 @@
       border-radius: 50%;
     }
   }
-  &__info {
+  #{&}__info {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;

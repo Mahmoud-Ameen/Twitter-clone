@@ -1,0 +1,43 @@
+@import '../general/general';
+
+body {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 100%;
+  min-height: 100vh;
+  #login {
+    .logo {
+      svg {
+        width: 50px;
+      }
+      &:hover {
+        background-color: transparent;
+      }
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      input[type='text'],
+      input[type='password'] {
+        margin: 10px 0;
+        font-size: 15px;
+        background: transparent;
+        padding: 15px 5px;
+        border: 1px solid var(--color-border);
+        color: var(--color-text-secondary);
+        &:focus {
+          border: 0;
+          outline: 2px solid var(--color-primary);
+        }
+      }
+      input[type='submit'].submit {
+        margin-top: 20px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+      }
+    }
+  }
+}
