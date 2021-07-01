@@ -29,7 +29,7 @@ export default function createTweet (closeFunc) {
 
   tweetBtn.addEventListener('click', () => {
     tweetsService.createTweet(textInput.value)
-    history.back()
+    closeFunc()
   })
 
   return dom

@@ -60,8 +60,10 @@ function createStore (reducer) {
       0: {
         author: 'MahmoudAshraf',
         publishDate: 'Jul 22, 2020',
-        text: '<h3 class="text-headings">Welcome to Twitter clone</h3>',
-        links: [],
+        publishTime: '2:05 am',
+        text: `<p class="text-heading">Welcome to Twitter clone🤩</p>
+        SPA with vanilla js without any libs <br> by <a class="color-primary" href="https://www.facebook.com/0MahmoudAshraf0/">Mahmoud</a> <br>
+        code on <a class="color-primary" href="">Github</a>`,
         images: [],
         retweeters: new Set(),
         likers: new Set(['JavaScript', 'MahmoudAshraf'])
@@ -69,8 +71,8 @@ function createStore (reducer) {
       1: {
         author: 'JavaScript',
         publishDate: 'Jul 22, 2020',
+        publishTime: '2:05 am',
         text: '5 Great JavaScript Frameworks for 2020 -',
-        links: ['https://t.co/otyPN0C9PE?amp=1'],
         images: [],
         retweeters: new Set(['MahmoudAshraf']),
         likers: new Set([])
@@ -78,8 +80,8 @@ function createStore (reducer) {
       2: {
         author: 'JavaScript',
         publishDate: 'Jul 22, 2020',
+        publishTime: '2:05 am',
         text: 'Do you really need javascript frameworks ?',
-        links: [],
         images: [],
         retweeters: new Set(['OsamaElzero']),
         likers: new Set(['OsamaElzero'])
@@ -90,7 +92,6 @@ function createStore (reducer) {
         publishTime: '2:05 am',
         text:
           'ساعد اي شخص ولا تنتظر مقابل فربما يمر الزمان وتقع في محنة ولا يقف بجانبك الا من ساعدته',
-        links: [],
         images: [],
         retweeters: new Set(['MahmoudAshraf']),
         likers: new Set(['MahmoudAshraf', 'JavaScript', 'OsamaElzero']),

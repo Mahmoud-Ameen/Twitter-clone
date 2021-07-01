@@ -11,7 +11,7 @@ export default (tweets, action) => {
     let newTweetId = Object.keys(tweets).length
 
     // get tweet data from the action
-    let { text, links, images } = action.payload
+    let { text, images } = action.payload
     let author = authService.getCurrentUser()
 
     // Get and format publish date
@@ -21,7 +21,6 @@ export default (tweets, action) => {
     updatedTweets[newTweetId] = {
       author,
       text,
-      links: links || [],
       images: images || [],
       publishDate,
       likers: new Set(),

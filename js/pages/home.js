@@ -4,8 +4,13 @@ import homeFeed from '../components/feed.js'
 import sideBar from '../components/common/sidebar.js'
 import store from '../store/store.js'
 import fakeTweetsService from '../fakeServices/fakeTweetsService.js'
+import fakeUsersService from '../fakeServices/fakeUsersService.js'
+import fakeAuthService from '../fakeServices/fakeAuthService.js'
 
 export default function HomePage () {
+  const currentUser = fakeUsersService.getUserData(
+    fakeAuthService.getCurrentUser()
+  )
   const dom = document.createElement('div')
   dom.id = 'HomePage'
   dom.innerHTML = `
@@ -13,7 +18,7 @@ export default function HomePage () {
 		<header id="navbar"></header>
 		<main id="main-section">
 			<div class="heading">
-				<img alt="Mahmoud" width="30px" height="30px" draggable="true" src="https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png">
+				<img alt="Mahmoud" width="30px" height="30px" draggable="true" src=${currentUser.image}>
 				<div>
 					<h1>Home</h1>
 					<div class="icon color-primary">

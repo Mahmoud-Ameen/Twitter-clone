@@ -3,14 +3,13 @@ import usersService from './fakeUsersService.js'
 import authService from './fakeAuthService.js'
 
 // Creating a new tweet
-const createTweet = (text, images, links) => {
+const createTweet = (text, images) => {
   store.dispatch({
     slice: 'tweets',
     type: 'createTweet',
     payload: {
       text,
-      images,
-      links
+      images
     }
   })
 }
