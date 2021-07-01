@@ -49,7 +49,7 @@ export default function followingsPage (username) {
 	</div>
 	`
 
-  dom.querySelector('#navbar').appendChild(navbar('user'))
+  dom.querySelector('#navbar').appendChild(navbar('profile'))
   dom.querySelector('.sidebarContainer').appendChild(sidebar())
 
   dom.querySelector('.usersContainer').appendChild(UsersList(followingsData))
