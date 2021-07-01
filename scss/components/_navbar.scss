@@ -152,6 +152,7 @@
     flex: unset;
 
     nav {
+      flex-direction: row;
       .currentUserCard {
         display: none;
       }
