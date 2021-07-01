@@ -12,8 +12,20 @@ function createStore (reducer) {
         bio: 'Front end web Developer ',
         followers: new Set(['JavaScript']),
         followings: new Set(['JavaScript', 'OsamaElzero']),
+        tweetsIds: new Set([10]),
+        isVerified: true
+      },
+      benAwad: {
+        name: 'Ben Awad',
+        image:
+          'https://pbs.twimg.com/profile_images/1152793238761345024/VRBvxeCM_200x200.jpg',
+        coverImage:
+          'https://pbs.twimg.com/profile_banners/840626569743912960/1601562221/600x200',
+        bio:
+          'Software Consultant • YouTuber • React.js and GraphQL Enthusiast ',
+        followers: new Set(['JavaScript', 'MahmoudAshraf']),
+        followings: new Set(['JavaScript', 'OsamaElzero', 'MahmoudAshraf']),
         tweetsIds: new Set([0]),
-        likedTweets: new Set([0, 1]),
         isVerified: true
       },
       JavaScript: {
@@ -25,8 +37,7 @@ function createStore (reducer) {
         bio: 'Tweets from the Oracle Developer Relations Team @groundbreakers',
         followers: new Set(['MahmoudAshraf']),
         followings: new Set(['OsamaElzero']),
-        tweetsIds: new Set([1, 2]),
-        likedTweets: new Set([0, 1]),
+        tweetsIds: new Set([2]),
         isVerified: true
       },
       OsamaElzero: {
@@ -38,8 +49,20 @@ function createStore (reducer) {
         bio: 'Addicted To Programming. #ElzeroWebSchool',
         followers: new Set(['MahmoudAshraf', 'JavaScript']),
         followings: new Set(['MahmoudAshraf']),
-        tweetsIds: new Set([3]),
-        likedTweets: new Set([0, 1]),
+        tweetsIds: new Set([3, 4]),
+        isVerified: true
+      },
+      droos_online: {
+        name: 'Abozaid',
+        image:
+          'https://pbs.twimg.com/profile_images/1308719700814303232/QCkHzpX4_200x200.jpg',
+        coverImage:
+          'https://pbs.twimg.com/profile_banners/957268691032461312/1519994479/600x200',
+        bio: `Used to be a civil engineer. Now, I am a full-time Youtuber and content creator. 
+        <br><a class="color-primary" href="https://t.co/I4a6CRY1vd?amp=1">youtube.com/c/droosonline4u</a>`,
+        followers: new Set(['MahmoudAshraf', 'OsamaElzero']),
+        followings: new Set(['MahmoudAshraf']),
+        tweetsIds: new Set([1]),
         isVerified: true
       },
       User12346: {
@@ -47,44 +70,52 @@ function createStore (reducer) {
         name: 'user gamed',
         image:
           'https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png',
-        coverImage:
-          'https://pbs.twimg.com/profile_banners/883839043/1475182691/600x200',
+        coverImage: '',
         bio: '',
         followers: new Set(['MahmoudAshraf']),
         followings: new Set(['MahmoudAshraf', 'OsamaElzero', 'JavaScript']),
-        tweetsIds: new Set(),
-        likedTweets: new Set()
+        tweetsIds: new Set()
       }
     },
     tweets: {
       0: {
-        author: 'MahmoudAshraf',
-        publishDate: 'Jul 22, 2020',
-        publishTime: '2:05 am',
-        text: `<p class="text-heading">Welcome to Twitter clone🤩</p>
-        SPA with vanilla js without any libs <br> by <a class="color-primary" href="https://www.facebook.com/0MahmoudAshraf0/">Mahmoud</a> <br>
-        code on <a class="color-primary" href="">Github</a>`,
+        author: 'benAwad',
+        publishDate: 'Feb 15, 2021',
+        publishTime: '8:25pm',
+        text: `Other than waiting, this is what I do when I get writers block and can't think of any good ideas:
+        <br><br>
+        I do a lot of "bad" ideas
+        <br><br>
+        I apply this to code/content/startups
+        <br><br>
+        Making "bad" content is a prerequisite to making "good" content`,
         images: [],
-        retweeters: new Set(),
-        likers: new Set(['JavaScript', 'MahmoudAshraf'])
+        retweeters: new Set([]),
+        likers: new Set(['MahmoudAshraf'])
       },
       1: {
-        author: 'JavaScript',
-        publishDate: 'Jul 22, 2020',
-        publishTime: '2:05 am',
-        text: '5 Great JavaScript Frameworks for 2020 -',
+        author: 'droos_online',
+        publishDate: 'Jul 1, 2021',
+        publishTime: '12:02 AM',
+        text: `فرق كبير بين واحد بيدرس حاجة عشان هيمتحن وينجح، وواحد بيدرس عشان عايز يطور نفسه، يكتبس مهارة، يزود من قيمته، يستخدم اللي اتعلمه في صنع او عمل شئ ما. 
+        الاول هيكره المادة، الثاني ممكن يقعد ٥ و٦ ساعات يذاكر ويتعلم وينسى نفسه.
+        <br><br>
+        تغيير المنظور ومعرفة الغاية بيفرق في الصبر على التعلم`,
         images: [],
-        retweeters: new Set(['MahmoudAshraf']),
-        likers: new Set([])
+        retweeters: new Set(),
+        likers: new Set(['OsamaElzero', 'MahmoudAshraf'])
       },
       2: {
         author: 'JavaScript',
         publishDate: 'Jul 22, 2020',
         publishTime: '2:05 am',
-        text: 'Do you really need javascript frameworks ?',
-        images: [],
-        retweeters: new Set(['OsamaElzero']),
-        likers: new Set(['OsamaElzero'])
+        text:
+          '5 Great JavaScript Frameworks for 2020 - <a class="color-primary" href="https://t.co/otyPN0C9PE?amp=1">https://insi...</a>',
+        images: [
+          'https://pbs.twimg.com/card_img/1410080815984234497/d4K-56qj?format=jpg&amp;name=small'
+        ],
+        retweeters: new Set(),
+        likers: new Set(['OsamaElzero', 'MahmoudAshraf'])
       },
       3: {
         author: 'OsamaElzero',
@@ -96,10 +127,68 @@ function createStore (reducer) {
         retweeters: new Set(['MahmoudAshraf']),
         likers: new Set(['MahmoudAshraf', 'JavaScript', 'OsamaElzero']),
         direction: 'rtl'
+      },
+      4: {
+        author: 'OsamaElzero',
+        publishDate: 'MAy 26, 2020',
+        publishTime: '5:05 am',
+        direction: 'rtl',
+        text: `بسم الله الرحمن الرحيم
+        <br>
+        =============
+        <br>
+        دة مسار تعليمي لل Front-End Developer فيه خبرات سنين ورتبته باذن الله لما هو مناسب لأغلب الناس وهفضل اطور فيه كل يوم بما يتناسب مع أغلب الناس.
+        <br>
+        ===================
+        <br>
+        <a class="color-primary" href="https://t.co/eWXpcVNzVh?amp=1">https://elzero.org/...</a>`,
+        images: [
+          'https://pbs.twimg.com/media/EY9_Tf9WoAAEXp0?format=jpg&amp;name=small'
+        ],
+        retweeters: new Set(),
+        likers: new Set([
+          'JavaScript',
+          'MahmoudAshraf',
+          'benAwad',
+          'droos_online'
+        ])
+      },
+      5: {
+        author: 'OsamaElzero',
+        publishDate: 'Jun 26, 2021',
+        publishTime: '7:18 am',
+        direction: 'rtl',
+        text: `من قال لا أدري علموه حتى يدري
+        <br>
+        ومن قال أدري سألوه حتى لا يدري`,
+        images: [],
+        retweeters: new Set(),
+        likers: new Set([
+          'JavaScript',
+          'MahmoudAshraf',
+          'benAwad',
+          'droos_online'
+        ])
+      },
+      10: {
+        author: 'MahmoudAshraf',
+        publishDate: 'Jul 22, 2020',
+        publishTime: '2:05 am',
+        text: `<p class="text-heading">Welcome to Twitter clone🤩</p>
+        SPA with vanilla js without any libraries/frameworks <br> by <a class="color-primary" href="https://www.facebook.com/0MahmoudAshraf0/">Mahmoud</a> <br>
+        code on <a class="color-primary" href="">Github</a>`,
+        images: [],
+        retweeters: new Set(),
+        likers: new Set([
+          'JavaScript',
+          'MahmoudAshraf',
+          'OsamaElzero',
+          'benAwad'
+        ])
       }
     },
     auth: {
-      currentUser: 'MahmoudAshraf'
+      currentUser: 'User12346'
     }
   }
   let callbacks = {}

@@ -1,5 +1,5 @@
 import navbar from '../components/common/navbar.js'
-import newTweet from '../components/new-tweet.js'
+import newTweet from '../components/newTweet.js'
 import homeFeed from '../components/feed.js'
 import sideBar from '../components/common/sidebar.js'
 import store from '../store/store.js'

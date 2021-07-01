@@ -56,6 +56,18 @@ article.tweet {
       font-size: 15px;
       font-weight: 400;
       line-height: 20px;
+      .imagesContainer {
+        margin-top: 20px;
+        border-radius: 15px;
+        width: 100%;
+        max-height: 280px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        img {
+          width: 100%;
+        }
+      }
     }
     // like, retweet, share, ...
     .tweet-actions {

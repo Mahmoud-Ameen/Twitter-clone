@@ -1,5 +1,4 @@
-import { goToPage } from '../app.js'
-import newTweet from '../components/new-tweet.js'
+import newTweet from '../components/newTweet.js'
 import tweetsService from '../fakeServices/fakeTweetsService.js'
 
 export default function createTweet (closeFunc) {

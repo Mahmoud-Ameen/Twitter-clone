@@ -24,20 +24,14 @@ export default function tweet (tweetData) {
 			<span class="icon more"><svg viewBox="0 0 24 24" aria-hidden="true"><g><circle cx="5" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle></g></svg></span>
 		</div>
 		<div class="tweet-body" style= ${'direction:' + tweetData.direction}>
-			${tweetData.text}
-			<!-- Render links -->
-			${
-        tweetData.links.length
-          ? tweetData.links.map(
-              link =>
-                `<br> <a class="color-primary" href=${link}>${link.slice(
-                  0,
-                  20
-                )}...</a>`
-            )
-          : ''
-      }
+		<p class="text">
+		${tweetData.text}
 		</p>
+		<div class="imagesContainer">${
+      tweetData.images.length
+        ? tweetData.images.map(img => `<img alt="alt?" src=${img}>`)
+        : ''
+    }</div>
 		</div>
 		<div class="tweet-actions">
 			<span class="action reply">

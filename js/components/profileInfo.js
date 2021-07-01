@@ -20,7 +20,12 @@ export default function ProfileInfo (user) {
   dom.innerHTML = `
 	<section class="profile-info">
 					<div class="cover">
-						<img src=${coverImage} alt=${name}>
+						${
+              coverImage
+                ? `<img src=${coverImage} alt=${name}>`
+                : '<div class="coverPlaceholder"></div>'
+            }
+						
 					</div>
 
 					
@@ -76,7 +81,11 @@ export default function ProfileInfo (user) {
 							</span>
 						</div>
 						<div class="followed-by text-secondary mb-2">
-							<p>Not followed by anyone you’re following</p>
+							${
+                currentUsername === username
+                  ? ''
+                  : '<p>Not followed by anyone you’re following</p>'
+              }
 						</div>
 
 					</div>

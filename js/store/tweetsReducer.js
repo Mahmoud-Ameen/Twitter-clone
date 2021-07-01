@@ -8,7 +8,7 @@ export default (tweets, action) => {
   // * Creating a tweet
   if (action.type === 'createTweet') {
     // Get last tweet id
-    let newTweetId = Object.keys(tweets).length
+    let newTweetId = Object.keys(tweets)[Object.keys(tweets).length - 1] + 1
 
     // get tweet data from the action
     let { text, images } = action.payload
