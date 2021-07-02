@@ -50,6 +50,18 @@
         font-weight: 400;
         line-height: 28px;
         margin: 20px 0;
+        .imagesContainer {
+          margin-top: 20px;
+          border-radius: 15px;
+          width: 100%;
+          max-height: 280px;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          img {
+            width: 100%;
+          }
+        }
       }
       .publish {
         &:hover {

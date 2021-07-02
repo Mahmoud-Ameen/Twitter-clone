@@ -93,6 +93,13 @@ export default function tweetPage (tweetId) {
 
 				
 		</p>
+		<div class='imagesContainer'>${
+      tweetData.images.length
+        ? tweetData.images.map(img => `<img alt="alt?" src=${img}>`)
+        : ''
+    }
+		</div>
+
 		</div>
 		
 		<a href = "#" class="publish text-secondary">

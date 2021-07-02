@@ -26,7 +26,12 @@ export default function sidebar () {
 
   const loadFriendsSuggesstions = () => {
     // TODO: get this data from users service
-    const usersnames = ['OsamaElzero', 'MahmoudAshraf', 'JavaScript']
+    const usersnames = [
+      'OsamaElzero',
+      'MahmoudAshraf',
+      'JavaScript',
+      'droos_online'
+    ]
 
     //
 

@@ -1,3 +1,4 @@
+@import './margin-padding';
 * {
   padding: 0;
   margin: 0;
@@ -8,12 +9,11 @@
 $color-primary: rgb(29, 161, 242);
 :root {
   --color-background: #fff;
-  --color-primary: rgb(29, 161, 242);
+  --color-primary: #1da1f2;
   --color-primary-light: #77c7f7;
   --color-primary-lightest: #e3f3fd;
   --color-primary-darker: #0d95e8;
 
-  --color-text-headings: #0f1419;
   --color-text-normal: #0f1419;
   --color-text-secondary: #5b7082;
 
@@ -67,7 +67,9 @@ a {
   font-size: 15px;
   color: var(--color-text-secondary);
 }
-
+.text-center {
+  text-align: center;
+}
 .hide {
   display: none !important;
 }

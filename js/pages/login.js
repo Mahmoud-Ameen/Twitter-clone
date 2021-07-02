@@ -11,8 +11,8 @@ export default function () {
 	</div>
 	<h1>Log in to Twitter Clone</h1>
 	<form action="#">
-		<input class="username" type="text" placeholder="Username"> 
-		<input class="password" type="password" placeholder="Password">
+		<input class="username" type="text" value="User12346" placeholder="Username"> 
+		<input class="password" type="password" value='password' placeholder="Password">
 		<input class="submit btn btn--primary 
 		block" type="submit" value="Log in">
 	</form>

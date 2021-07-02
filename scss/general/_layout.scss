@@ -1,8 +1,8 @@
 #page-layout {
   display: flex;
   justify-content: center;
-  @media (max-width: 1300px) {
-  }
+  min-height: 100vh;
+  background-color: var(--color-background);
 }
 #main-section {
   flex: 0 1 600px;
@@ -11,6 +11,9 @@
   border-top: 0;
   border-bottom: 0;
   padding-bottom: 20px;
+  @media (max-width: 500px) {
+    padding-bottom: 50px;
+  }
 }
 
 #sidebar {

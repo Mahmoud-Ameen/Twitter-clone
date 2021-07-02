@@ -33,7 +33,7 @@ export default function profile (username) {
 						<span class="tweets-count">${userData.tweetsIds.size} Tweets</span>
 					</span>
 				</div>
-				<button class="btn btn--outline follow">Follow</button>
+				
 			</div>
 			<!-- #endregion -->
 			<!-- User info -->

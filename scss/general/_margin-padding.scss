@@ -1,50 +1,50 @@
 @for $i from 1 through 4 {
   // Padding
   .p-#{$i} {
-    padding: $i * 5px;
+    padding: $i * 0.5rem;
   }
   .py-#{$i} {
-    padding-top: $i * 5px;
-    padding-bottom: $i * 5px;
+    padding-top: $i * 0.25rem;
+    padding-bottom: $i * 0.25rem;
   }
   .px-#{$i} {
-    padding-left: $i * 5px;
-    padding-right: $i * 5px;
+    padding-left: $i * 0.25rem;
+    padding-right: $i * 0.25rem;
   }
   .pt-#{$i} {
-    padding-top: $i * 5px;
+    padding-top: $i * 0.25rem;
   }
   .pr-#{$i} {
-    padding-right: $i * 5px;
+    padding-right: $i * 0.25rem;
   }
   .pl-#{$i} {
-    padding-left: $i * 5px;
+    padding-left: $i * 0.25rem;
   }
   .pb-#{$i} {
-    padding-bottom: $i * 5px;
+    padding-bottom: $i * 0.25rem;
   }
   //  margin
   .m-#{$i} {
-    margin: $i * 5px;
+    margin: $i * 0.25rem;
   }
   .my-#{$i} {
-    margin-top: $i * 5px;
-    margin-bottom: $i * 5px;
+    margin-top: $i * 0.25rem;
+    margin-bottom: $i * 0.25rem;
   }
   .mx-#{$i} {
-    margin-left: $i * 5px;
-    margin-right: $i * 5px;
+    margin-left: $i * 0.25rem;
+    margin-right: $i * 0.25rem;
   }
   .mt-#{$i} {
-    margin-top: $i * 5px;
+    margin-top: $i * 0.25rem;
   }
   .mr-#{$i} {
-    margin-right: $i * 5px;
+    margin-right: $i * 0.25rem;
   }
   .ml-#{$i} {
-    margin-left: $i * 5px;
+    margin-left: $i * 0.25rem;
   }
   .mb-#{$i} {
-    margin-bottom: $i * 5px;
+    margin-bottom: $i * 0.25rem;
   }
 }

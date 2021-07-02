@@ -43,13 +43,6 @@ export default (tweets, action) => {
     const currentUser = authService.getCurrentUser()
 
     updatedTweets[tweetId].likers.add(currentUser)
-
-    // Update the user's likedTweets list
-    store.dispatch({
-      slice: 'users',
-      type: 'likeTweet',
-      payload: { tweetId }
-    })
   }
 
   // * Unlike a tweet *
@@ -60,13 +53,6 @@ export default (tweets, action) => {
     const currentUser = authService.getCurrentUser()
 
     updatedTweets[tweetId].likers.delete(currentUser)
-
-    // Update the user's likedTweets list
-    store.dispatch({
-      slice: 'users',
-      type: 'unlikeTweet',
-      payload: { tweetId }
-    })
   }
 
   return updatedTweets

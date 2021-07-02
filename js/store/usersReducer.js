@@ -25,16 +25,6 @@ export default (users, action) => {
     const currentUsername = fakeAuthService.getCurrentUser()
     updatedUsers[currentUsername].tweetsIds.add(action.payload.tweetId)
   }
-  // * Add tweet to liked tweets
-  else if (action.type === 'likeTweet') {
-    const currentUsername = fakeAuthService.getCurrentUser()
-    updatedUsers[currentUsername].likedTweets.add(action.payload.tweetId)
-  }
-  // * Remove tweet from liked tweets
-  else if (action.type === 'unlikeTweet') {
-    const currentUsername = fakeAuthService.getCurrentUser()
-    updatedUsers[currentUsername].likedTweets.delete(action.payload.tweetId)
-  }
 
   // * Follow User
   else if (action.type === 'followUser') {

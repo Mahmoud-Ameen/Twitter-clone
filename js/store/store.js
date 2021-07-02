@@ -73,7 +73,7 @@ function createStore (reducer) {
         coverImage: '',
         bio: '',
         followers: new Set(['MahmoudAshraf']),
-        followings: new Set(['MahmoudAshraf', 'OsamaElzero', 'JavaScript']),
+        followings: new Set([]),
         tweetsIds: new Set()
       }
     },
@@ -110,7 +110,7 @@ function createStore (reducer) {
         publishDate: 'Jul 22, 2020',
         publishTime: '2:05 am',
         text:
-          '5 Great JavaScript Frameworks for 2020 - <a class="color-primary" href="https://t.co/otyPN0C9PE?amp=1">https://insi...</a>',
+          '5 Great JavaScript Frameworks for 2020 - <a target="_blank" class="color-primary" href="https://t.co/otyPN0C9PE?amp=1">https://insi...</a>',
         images: [
           'https://pbs.twimg.com/card_img/1410080815984234497/d4K-56qj?format=jpg&amp;name=small'
         ],
@@ -141,7 +141,7 @@ function createStore (reducer) {
         <br>
         ===================
         <br>
-        <a class="color-primary" href="https://t.co/eWXpcVNzVh?amp=1">https://elzero.org/...</a>`,
+        <a class="color-primary" target = '_blank' href="https://t.co/eWXpcVNzVh?amp=1">https://elzero.org/...</a>`,
         images: [
           'https://pbs.twimg.com/media/EY9_Tf9WoAAEXp0?format=jpg&amp;name=small'
         ],
@@ -175,8 +175,8 @@ function createStore (reducer) {
         publishDate: 'Jul 22, 2020',
         publishTime: '2:05 am',
         text: `<p class="text-heading">Welcome to Twitter clone🤩</p>
-        SPA with vanilla js without any libraries/frameworks <br> by <a class="color-primary" href="https://www.facebook.com/0MahmoudAshraf0/">Mahmoud</a> <br>
-        code on <a class="color-primary" href="">Github</a>`,
+        SPA with vanilla js without any libraries/frameworks <br> by <a target='_blank' class="color-primary" href="https://www.facebook.com/0MahmoudAshraf0/">Mahmoud</a> <br>
+        code on <a class="color-primary" target ='_blank' href="">Github</a>`,
         images: [],
         retweeters: new Set(),
         likers: new Set([
@@ -188,7 +188,7 @@ function createStore (reducer) {
       }
     },
     auth: {
-      currentUser: 'User12346'
+      currentUser: undefined
     }
   }
   let callbacks = {}

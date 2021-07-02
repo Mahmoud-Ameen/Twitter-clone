@@ -8,10 +8,11 @@
   text-transform: capitalize;
   &--primary {
     background-color: var(--color-primary);
-    transition: background-color 0.1s;
+    transition: opacity 0.1s;
     color: #fff;
+    opacity: 0.9;
     &:hover {
-      background-color: var(--color-primary-darker);
+      opacity: 1;
     }
   }
   &--block {

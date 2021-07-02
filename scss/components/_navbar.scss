@@ -1,5 +1,7 @@
 @import './icon';
 @import './createTweetModal';
+@import './modal';
+@import './settingsModal';
 #navbar {
   display: flex;
   flex-wrap: wrap;
@@ -123,7 +125,7 @@
         .lists,
         .bookmarks,
         .profile,
-        .more,
+        .messages,
         .logo {
           display: none;
         }
@@ -163,7 +165,7 @@
         .lists,
         .bookmarks,
         .profile,
-        .more,
+        .messages,
         .logo {
           display: none;
         }
