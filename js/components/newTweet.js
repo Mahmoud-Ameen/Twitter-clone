@@ -1,3 +1,4 @@
+import { goToPage } from '../app.js'
 import fakeAuthService from '../fakeServices/fakeAuthService.js'
 import tweetsService from '../fakeServices/fakeTweetsService.js'
 import fakeUsersService from '../fakeServices/fakeUsersService.js'
@@ -48,6 +49,10 @@ export default function newTweet () {
   tweetBtn.addEventListener('click', () => {
     tweetsService.createTweet(textInput.value)
   })
+
+  dom.querySelector('.user-image').onclick = () => {
+    goToPage('user?' + currentUser.username)
+  }
 
   return dom
 }

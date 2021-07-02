@@ -6,6 +6,7 @@ import store from '../store/store.js'
 import fakeTweetsService from '../fakeServices/fakeTweetsService.js'
 import fakeUsersService from '../fakeServices/fakeUsersService.js'
 import fakeAuthService from '../fakeServices/fakeAuthService.js'
+import { goToPage } from '../app.js'
 
 export default function HomePage () {
   const currentUser = fakeUsersService.getUserData(
@@ -18,7 +19,7 @@ export default function HomePage () {
 		<header id="navbar"></header>
 		<main id="main-section">
 			<div class="heading">
-				<img alt="Mahmoud" width="30px" height="30px" draggable="true" src=${currentUser.image}>
+				<img class="currentUserImage" alt="Mahmoud" width="30px" height="30px"  src=${currentUser.image}>
 				<div>
 					<h1>Home</h1>
 					<div class="icon color-primary">
@@ -49,6 +50,11 @@ export default function HomePage () {
   }
 
   loadFeed()
+
+  // events listiners
+  dom.querySelector('.currentUserImage').onclick = () => {
+    goToPage('user?' + currentUser.username)
+  }
 
   store.subscribe('tweets', loadFeed)
 
