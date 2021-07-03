@@ -1,13 +1,13 @@
 @import '../general/general';
 
-body {
+#loginPage {
   padding: 20px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   min-width: 100%;
   min-height: 100vh;
-  #login {
+  > div {
     .logo {
       svg {
         width: 50px;
