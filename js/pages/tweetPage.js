@@ -5,7 +5,6 @@ import authService from '../fakeServices/fakeAuthService.js'
 import store from '../store/store.js'
 import { goToPage } from '../app.js'
 import usersModal from '../components/common/usersModal.js'
-import fakeUsersService from '../fakeServices/fakeUsersService.js'
 
 export default function tweetPage (tweetId) {
   // Get Tweet

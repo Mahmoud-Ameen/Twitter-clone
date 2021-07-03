@@ -6,7 +6,7 @@ export default function usersModal (users, title, closeFunc) {
   dom.innerHTML = `
 
 		<section id="usersModalBackground" class="modalContainer">
-			<div id="usersModal" >
+			<div id="usersModal" class="modal" >
 					<header class="heading">
 
 							<div>

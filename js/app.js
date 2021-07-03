@@ -33,11 +33,11 @@ const routing = () => {
     return
   } else if (hash === '#login') {
     history.pushState(null, null, `#home`)
-    return loadPage(HomePage)
+    return loadPage(routes['#home'])
   }
 
   // If there is no path specified load home page
-  if (!hash.length) return loadPage(HomePage)
+  if (!hash.length) return loadPage(routes['#home'])
 
   let pageName = hash
   if (hash.includes('?')) {
@@ -63,7 +63,6 @@ function loadPage (route, props) {
     link.rel = 'stylesheet'
     link.href = route.styleSheet
     document.head.appendChild(link)
-    console.log('Added')
   }
 }
 

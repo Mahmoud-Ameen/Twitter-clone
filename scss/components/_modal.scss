@@ -8,8 +8,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #0002;
+  background-color: #58585855;
   .modal {
+    box-shadow: 0 0 10px 1px #777;
     .heading {
       background-color: var(--color-background);
       border-bottom: 1px solid var(--color-border);
