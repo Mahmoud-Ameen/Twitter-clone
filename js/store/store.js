@@ -175,8 +175,8 @@ function createStore (reducer) {
         publishDate: 'Jul 22, 2020',
         publishTime: '2:05 am',
         text: `<p class="text-heading">Welcome to Twitter clone🤩</p>
-        SPA with vanilla js without any libraries/frameworks <br> by <a target='_blank' class="color-primary" href="">Mahmoud</a> <br>
-        code on <a class="color-primary" target ='_blank' href="">Github</a>`,
+        SPA with vanilla js without any libraries/frameworks <br> by <a target='_blank' class="color-primary" href="https://www.facebook.com/0MahmoudAshraf0">Mahmoud</a> <br>
+        code on <a class="color-primary" target ='_blank' href="https://github.com/Mahmoud-Ashraf1/Twitter-clone">Github</a>`,
         images: [],
         retweeters: new Set(),
         likers: new Set([
