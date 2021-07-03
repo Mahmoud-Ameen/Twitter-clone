@@ -59,7 +59,7 @@ export default function settingsModal (closeFunc) {
           e.dataset.backgroundcolor
         )
 
-        // Changes text color
+        // Changes text and border color
         if (e.classList.contains('dim') || e.classList.contains('lightsOut')) {
           document.documentElement.style.setProperty(
             '--color-text-normal',
@@ -79,6 +79,10 @@ export default function settingsModal (closeFunc) {
           document.documentElement.style.setProperty(
             '--color-text-normal',
             '#0f1419'
+          )
+          document.documentElement.style.setProperty(
+            '--color-border',
+            'rgb(235, 238, 240'
           )
         }
       })

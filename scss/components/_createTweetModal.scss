@@ -26,6 +26,9 @@
     padding-bottom: 50px !important;
   }
   @media (max-width: 500px) {
+    input.new-tweet__text {
+      font-size: 18px !important;
+    }
     .heading {
       .tweet.upper {
         display: initial;

@@ -1,6 +1,8 @@
+import fakeAuthService from '../../fakeServices/fakeAuthService.js'
 import fakeUsersService from '../../fakeServices/fakeUsersService.js'
 
 export default function user (userData) {
+  const currentUser = fakeAuthService.getCurrentUser()
   const dom = document.createElement('div')
   dom.innerHTML = `
 			<div class="user">
@@ -21,17 +23,23 @@ export default function user (userData) {
     userData.username
   } </a></span>
 					</div>
-					<button class="btn btn--outline toggleFollow">
-					${userData.isFollowed ? 'Unfollow' : 'Follow'}
-					</button>
+					${
+            userData.username === currentUser
+              ? ''
+              : `<button class='btn btn--outline toggleFollow'>
+                ${userData.isFollowed ? 'Unfollow' : 'Follow'}
+              </button>`
+          }
 				</div>
 			</div>
 	`
 
   // Event listiners
-  dom.querySelector('.toggleFollow').addEventListener('click', () => {
-    fakeUsersService.handleFollowUser(userData.username)
-  })
+  try {
+    dom.querySelector('.toggleFollow').addEventListener('click', () => {
+      fakeUsersService.handleFollowUser(userData.username)
+    })
+  } catch {}
 
   return dom
 }

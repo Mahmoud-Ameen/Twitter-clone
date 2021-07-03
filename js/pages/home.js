@@ -9,6 +9,7 @@ import fakeAuthService from '../fakeServices/fakeAuthService.js'
 import { goToPage } from '../app.js'
 
 export default function HomePage () {
+  // Get current user
   const currentUser = fakeUsersService.getUserData(
     fakeAuthService.getCurrentUser()
   )
@@ -35,10 +36,8 @@ export default function HomePage () {
 
 	`
 
-  // render sidebar
+  // load components
   dom.querySelector('.sidebarContainer').appendChild(sideBar())
-
-  // This part is responsible for rerender elements
   dom.querySelector('.new-tweet-container').appendChild(newTweet())
   dom.querySelector('#navbar').appendChild(navbar('home'))
 
@@ -56,6 +55,7 @@ export default function HomePage () {
     goToPage('user?' + currentUser.username)
   }
 
+  // Rerender feed when the tweets updates
   store.subscribe('tweets', loadFeed)
 
   return dom

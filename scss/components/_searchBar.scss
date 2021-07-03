@@ -2,10 +2,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ebeef0;
+  background-color: var(--color-border);
   border-radius: 30px;
   padding: 0 15px;
   input[type='search'] {
+    color: var(--color-text-normal);
     border: none;
     background-color: transparent;
     width: 100%;

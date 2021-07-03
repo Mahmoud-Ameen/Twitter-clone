@@ -14,8 +14,6 @@ export default function profile (username) {
 
   const dom = document.createElement('div')
   dom.innerHTML = `
-	<link rel="preload" as="style" href="./css/profile.min.css" />
-	<link rel="stylesheet" href="./css/profile.min.css">
 	<div id='page-layout'>
 		<!-- #region navbar -->
 		<header id="navbar"></header>

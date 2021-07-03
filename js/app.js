@@ -7,21 +7,26 @@ import login from './pages/login.js'
 import fakeAuthService from './fakeServices/fakeAuthService.js'
 
 const routes = {
-  '#home': HomePage,
-  '#user': ProfilePage,
-  '#tweet': tweetPage,
-  '#followings': followingsPage,
-  '#followers': followersPage,
-  '#login': login
+  '#home': { page: HomePage, styleSheet: './css/home.min.css' },
+  '#user': { page: ProfilePage, styleSheet: './css/profile.min.css' },
+  '#tweet': { page: tweetPage, styleSheet: './css/tweetPage.min.css' },
+  '#followings': {
+    page: followingsPage,
+    styleSheet: './css/followings.min.css'
+  },
+  '#followers': { page: followersPage, styleSheet: './css/followings.min.css' },
+  '#login': { page: login, styleSheet: './css/login.min.css' }
 }
 
 const routing = () => {
   // [0] => redirect to login page if not signed in
   // [1] => Get url hash
   // [2] => load page based on the hash value
+  // [3] => Add the page's style file to the head
 
   const hash = window.location.hash
 
+  // Redirect to login page if not signed in
   if (!fakeAuthService.getCurrentUser()) {
     history.pushState(null, null, `#${'login'}`)
     loadPage(login)
@@ -31,6 +36,7 @@ const routing = () => {
     return loadPage(HomePage)
   }
 
+  // If there is no path specified load home page
   if (!hash.length) return loadPage(HomePage)
 
   let pageName = hash
@@ -47,12 +53,22 @@ routing()
 window.addEventListener('popstate', routing)
 
 // *
-function loadPage (page, props) {
+function loadPage (route, props) {
   document.querySelector('.root').innerHTML = ''
-  document.querySelector('.root').appendChild(page(props))
+  document.querySelector('.root').appendChild(route.page(props))
+
+  // Add page stylesheet to the head
+  if (!document.head.querySelector(`link[href='${route.styleSheet}']`)) {
+    const link = document.createElement('link')
+    link.rel = 'stylesheet'
+    link.href = route.styleSheet
+    document.head.appendChild(link)
+    console.log('Added')
+  }
 }
 
 export function goToPage (pageName) {
   history.pushState(null, null, `#${pageName}`)
+
   routing()
 }

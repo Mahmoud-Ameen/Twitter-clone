@@ -19,8 +19,6 @@ export default function tweetPage (tweetId) {
   const dom = document.createElement('div')
   dom.id = 'tweetPage'
   dom.innerHTML = `
-	<link rel="preload" as="style" href="./css/tweetPage.min.css" />
-	<link rel="stylesheet" href="./css/tweetPage.min.css">
 	<div id='page-layout'>
 		<!-- #region navbar -->
 		<header id="navbar"></header>

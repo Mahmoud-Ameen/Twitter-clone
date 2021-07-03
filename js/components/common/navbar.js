@@ -171,20 +171,10 @@ export default function navbar (active) {
     .querySelector('.nav__link.home')
     .addEventListener('click', () => goToPage('home'))
 
+  // Event listiners
   dom.querySelector('.currentUserCard').onclick = () => {
     goToPage('user?' + currentUserData.username)
   }
-
-  dom.querySelectorAll('.tweet-btn-icon,.tweet-btn').forEach(e =>
-    e.addEventListener('click', () => {
-      dom.querySelector('.newTweetModalContainer').innerHTML = ''
-      dom.querySelector('.newTweetModalContainer').appendChild(
-        createTweet(() => {
-          dom.querySelector('.newTweetModalContainer').innerHTML = ''
-        })
-      )
-    })
-  )
 
   const openSettingsModal = () => {
     dom.querySelector('.settingsModalContainer').innerHTML = ''
@@ -198,6 +188,17 @@ export default function navbar (active) {
   }
 
   dom.querySelector('.settings').onclick = openSettingsModal
+
+  dom.querySelectorAll('.tweet-btn-icon,.tweet-btn').forEach(e =>
+    e.addEventListener('click', () => {
+      dom.querySelector('.newTweetModalContainer').innerHTML = ''
+      dom.querySelector('.newTweetModalContainer').appendChild(
+        createTweet(() => {
+          dom.querySelector('.newTweetModalContainer').innerHTML = ''
+        })
+      )
+    })
+  )
 
   dom.querySelector(`.${active}  span`).classList.add('color-primary')
 
