@@ -29,7 +29,7 @@ const routing = () => {
   // Redirect to login page if not signed in
   if (!fakeAuthService.getCurrentUser()) {
     history.pushState(null, null, `#${'login'}`)
-    loadPage(login)
+    loadPage(routes['#login'])
     return
   } else if (hash === '#login') {
     history.pushState(null, null, `#home`)
@@ -54,6 +54,8 @@ window.addEventListener('popstate', routing)
 
 // *
 function loadPage (route, props) {
+  console.log(route)
+
   document.querySelector('.root').innerHTML = ''
   document.querySelector('.root').appendChild(route.page(props))
 

@@ -49,7 +49,7 @@ function createStore (reducer) {
         bio: 'Addicted To Programming. #ElzeroWebSchool',
         followers: new Set(['MahmoudAshraf', 'JavaScript']),
         followings: new Set(['MahmoudAshraf']),
-        tweetsIds: new Set([3, 4]),
+        tweetsIds: new Set([3, 4, 5]),
         isVerified: true
       },
       droos_online: {
@@ -188,7 +188,7 @@ function createStore (reducer) {
       }
     },
     auth: {
-      currentUser: 'User12346'
+      currentUser: undefined
     }
   }
   let callbacks = {}
