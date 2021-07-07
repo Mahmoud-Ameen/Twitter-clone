@@ -15,6 +15,19 @@ function createStore (reducer) {
         tweetsIds: new Set([10]),
         isVerified: true
       },
+      freeCodeCamp: {
+        name: 'freeCodeCamp.org',
+        image:
+          'https://pbs.twimg.com/profile_images/1276770212927410176/qTgTIejk_200x200.jpg',
+        coverImage:
+          'https://pbs.twimg.com/profile_banners/1668100142/1423791803/600x200',
+        bio:
+          "We're a community of millions of people who are building new skills and getting new jobs together. A 501(c)(3) nonprofit.",
+        followers: new Set(['MahmoudAshraf']),
+        followings: new Set(['JavaScript', 'MahmoudAshraf']),
+        tweetsIds: new Set([6]),
+        isVerified: true
+      },
       benAwad: {
         name: 'Ben Awad',
         image:
@@ -110,7 +123,7 @@ function createStore (reducer) {
         publishDate: 'Jul 22, 2020',
         publishTime: '2:05 am',
         text:
-          '5 Great JavaScript Frameworks for 2020 - <a target="_blank" class="color-primary" href="https://t.co/otyPN0C9PE?amp=1">https://insi...</a>',
+          "5 Great JavaScript Frameworks for 2020 - <a target='_blank' rel='noopener' class='color-primary' href='https://t.co/otyPN0C9PE?amp=1'>https://insi...</a>",
         images: [
           'https://pbs.twimg.com/card_img/1410080815984234497/d4K-56qj?format=jpg&amp;name=small'
         ],
@@ -141,10 +154,8 @@ function createStore (reducer) {
         <br>
         ===================
         <br>
-        <a class="color-primary" target = '_blank' href="https://t.co/eWXpcVNzVh?amp=1">https://elzero.org/...</a>`,
-        images: [
-          'https://pbs.twimg.com/media/EY9_Tf9WoAAEXp0?format=jpg&amp;name=small'
-        ],
+        <a class="color-primary" rel="noopener" target = '_blank' href="https://t.co/eWXpcVNzVh?amp=1">https://elzero.org/...</a>`,
+        images: [],
         retweeters: new Set(),
         likers: new Set([
           'JavaScript',
@@ -170,13 +181,32 @@ function createStore (reducer) {
           'droos_online'
         ])
       },
+      6: {
+        author: 'freeCodeCamp',
+        publishDate: 'Sep 7, 2020',
+        publishTime: '9:05 am',
+        text: `As a developer, you should have a portfolio where you can display your projects.
+              <br>
+              <br>
+              And building your own portfolio is a great way to learn new skills and help yourself out.
+              <br>
+              <br>
+              In this guide, Reed shows you how to build a portfolio website with React. 
+              <a class="color-primary" rel = 'noopener' target ='_blank' href="https://t.co/o9vRVFwMBJ?amp=1"> https://freecodecamp.org... </a>
+        `,
+        images: [
+          'https://pbs.twimg.com/card_img/1410993251956441095/RZ9W5ghH?format=png&amp;name=small'
+        ],
+        retweeters: new Set(),
+        likers: new Set(['MahmoudAshraf', 'benAwad'])
+      },
       10: {
         author: 'MahmoudAshraf',
         publishDate: 'Jul 22, 2020',
         publishTime: '2:05 am',
         text: `<p class="text-heading">Welcome to Twitter clone🤩</p>
-        SPA with vanilla js without any libraries/frameworks <br> by <a target='_blank' class="color-primary" href="https://www.facebook.com/0MahmoudAshraf0">Mahmoud</a> <br>
-        code on <a class="color-primary" target ='_blank' href="https://github.com/Mahmoud-Ashraf1/Twitter-clone">Github</a>`,
+        SPA with vanilla js without any libraries/frameworks <br> by <a target='_blank' rel = 'noopener' class="color-primary" href="https://www.facebook.com/0MahmoudAshraf0">Mahmoud</a> <br>
+        code on <a class="color-primary" rel = 'noopener' target ='_blank' href="https://github.com/Mahmoud-Ashraf1/Twitter-clone">Github</a>`,
         images: [],
         retweeters: new Set(),
         likers: new Set([
@@ -188,7 +218,7 @@ function createStore (reducer) {
       }
     },
     auth: {
-      currentUser: undefined
+      currentUser: 'User12346'
     }
   }
   let callbacks = {}

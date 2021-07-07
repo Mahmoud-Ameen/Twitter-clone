@@ -10,7 +10,9 @@ export default function tweet (tweetData) {
   dom.className = 'tweet'
   dom.innerHTML = `
 	<div class="author-image">
-		<img alt="author name" width="48px" height="48px" src=${tweetData.author.image}>
+		<img  alt="author name" width="48px" height="48px" src=${
+      tweetData.author.image
+    }>
 	</div>
 	<div class="content">
 		<div class="upper">
@@ -29,7 +31,9 @@ export default function tweet (tweetData) {
 		</p>
 		<div class="imagesContainer">${
       tweetData.images.length
-        ? tweetData.images.map(img => `<img alt="alt?" src=${img}>`)
+        ? tweetData.images.map(
+            img => `<img width="600px" height="300px" alt="alt?" src=${img}>`
+          )
         : ''
     }</div>
 		</div>
