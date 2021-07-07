@@ -218,7 +218,7 @@ function createStore (reducer) {
       }
     },
     auth: {
-      currentUser: 'User12346'
+      currentUser: undefined
     }
   }
   let callbacks = {}
