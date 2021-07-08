@@ -32,7 +32,7 @@ export default function tweet (tweetData) {
 		<div class="imagesContainer">${
       tweetData.images.length
         ? tweetData.images.map(
-            img => `<img width="600px" height="300px" alt="alt?" src=${img}>`
+            img => `<img width="600px" alt="alt?" src=${img}>`
           )
         : ''
     }</div>
