@@ -1,7 +1,5 @@
 import searchBar from './searchBar.js'
-import topicsSuggesstions from './topicsSuggestions.js'
 import friendsSuggestions from './friendsSuggestions.js'
-import fakeUsersService from '../../fakeServices/fakeUsersService.js'
 import store from '../../store/store.js'
 
 export default function sidebar () {
@@ -12,9 +10,6 @@ export default function sidebar () {
   ${searchBar()}
   <!-- People to follow -->
   <div class="friendSuggesstions"></div>
-  
-  <!-- Topics to follow -->
-  ${topicsSuggesstions()}
   
   <!-- Copyrights -->
   <div class="copyrights">
