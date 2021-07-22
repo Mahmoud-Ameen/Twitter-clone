@@ -7,15 +7,18 @@ import login from './pages/login.js'
 import fakeAuthService from './fakeServices/fakeAuthService.js'
 
 const routes = {
-  '#home': { page: HomePage, styleSheet: './css/home.min.css' },
-  '#user': { page: ProfilePage, styleSheet: './css/profile.min.css' },
-  '#tweet': { page: tweetPage, styleSheet: './css/tweetPage.min.css' },
+  '#home': { page: HomePage, styleSheet: './dist/css/home.min.css' },
+  '#user': { page: ProfilePage, styleSheet: './dist/css/profile.min.css' },
+  '#tweet': { page: tweetPage, styleSheet: './dist/css/tweetPage.min.css' },
   '#followings': {
     page: followingsPage,
-    styleSheet: './css/followings.min.css'
+    styleSheet: './dist/css/followings.min.css'
   },
-  '#followers': { page: followersPage, styleSheet: './css/followings.min.css' },
-  '#login': { page: login, styleSheet: './css/login.min.css' }
+  '#followers': {
+    page: followersPage,
+    styleSheet: './dist/css/followings.min.css'
+  },
+  '#login': { page: login, styleSheet: './dist/css/login.min.css' }
 }
 
 const routing = () => {
