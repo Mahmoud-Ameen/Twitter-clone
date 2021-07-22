@@ -1,0 +1,23 @@
+{
+  "name": "twitter-clone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mahmoud-Ashraf1/twitter-clone.git"
+  },
+  "author": "Mahmoud Ashraf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mahmoud-Ashraf1/twitter-clone/issues"
+  },
+  "homepage": "https://github.com/Mahmoud-Ashraf1/twitter-clone#home",
+  "devDependencies": {
+    "webpack": "^5.43.0",
+    "webpack-cli": "^4.7.2"
+  }
+}

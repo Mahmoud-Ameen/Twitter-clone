@@ -125,7 +125,7 @@ function createStore (reducer) {
         text:
           "5 Great JavaScript Frameworks for 2020 - <a target='_blank' rel='noopener' class='color-primary' href='https://t.co/otyPN0C9PE?amp=1'>https://insi...</a>",
         images: [
-          'https://pbs.twimg.com/card_img/1410080815984234497/d4K-56qj?format=jpg&amp;name=small'
+          'https://www.creative-tim.com/blog/content/images/wordpress/2019/10/The-Top-10-Javascript-Frameworks.jpg'
         ],
         retweeters: new Set(),
         likers: new Set(['OsamaElzero', 'MahmoudAshraf'])
@@ -155,7 +155,9 @@ function createStore (reducer) {
         ===================
         <br>
         <a class="color-primary" rel="noopener" target = '_blank' href="https://t.co/eWXpcVNzVh?amp=1">https://elzero.org/...</a>`,
-        images: [],
+        images: [
+          'https://elzero.org/wp-content/uploads/2019/06/practical-html-css.png'
+        ],
         retweeters: new Set(),
         likers: new Set([
           'JavaScript',
@@ -194,9 +196,7 @@ function createStore (reducer) {
               In this guide, Reed shows you how to build a portfolio website with React. 
               <a class="color-primary" rel = 'noopener' target ='_blank' href="https://t.co/o9vRVFwMBJ?amp=1"> https://freecodecamp.org... </a>
         `,
-        images: [
-          'https://pbs.twimg.com/card_img/1410993251956441095/RZ9W5ghH?format=png&amp;name=small'
-        ],
+        images: ['https://reactjs.org/logo-og.png'],
         retweeters: new Set(),
         likers: new Set(['MahmoudAshraf', 'benAwad'])
       },
